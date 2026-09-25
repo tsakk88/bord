@@ -1,0 +1,1800 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1D46A8">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Bord">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAE2klEQVR42u3d3U0cQRBFYe9o04BoLEjAElk4GEcBkhNAcjQkgh8sv1iWBnamu+vnO882zFTf01W9zO5e7h6e378ATdmUAAQACAAQACAAQACAAAABAAIABAAIABAAIABAAIAAAAEAAgAEAAgAEAAgAEAAgAAAAQACAAQACAAQACAAMJurEozl7fXp8M+4f3xRyEFcfDx6rLCTggACTwgCCDwhCCD4RCCA0JOBAIJPBAIIPhEIIPhEIIDgE+EcNuFH57q06gCCrxu0FWBl+I+EKet1E6Bp+GeExjNHBAgTlAgB6XKfBAgSishh6HrfBJgQgkwBUIOmAoxY+MyLrh6NBDh7sSsttNoUF+DMBa78yoc6FRTgrEXt9CiAmv1hs5D9wn/m/Wb/63rqDuATF9SxbQcQ/ljdIGsn2IQfnSVINwIdLbLgq3GpQ7Dwq1MbAY7sTMI/r16ZRqFN+NFZgk340VmCzeKhcx3DC+B9vLmJvn5b1eLZ/Y1CbUcg4VfX9ALcumsIf0wJonYB3xGG1oR8FKLq7v/r248P/9uvP7+XPNxGW6MyX5IXMfyfCfze/40mxP3jS4lX6MIJUKGoR4K/9zOjd4aPrG+kzapEB4hQ0BGh3/s9q2Wo0AW2aLuDHT/+7620zuk7wMrdP0IAV49G2buAl0GL7L5ZuwEBDrTFVbt/1LCtuq5b1iFK19ABiu20OkFCAbLs/lnCteI6s3YBHaDozqoTFBZg9u6fNUyzrzvjg4g6QPGdVCcILkDk15CrhCfyfaxe/3QdwPP+1scIZPc3ChFAWNxXcgF84gNW5yBVBzD/WycjkDHB/REAIIDd0X3mFcABGBHykKYDOAA7CBuBAAKYi90vAQACAAQACAAQACAAQACAAAABAAIABNgh+zevuF8CAHUF8P6BXGRZr2UCeL4fEfJgBGo4F5v/CQAQoOPuaPdPLICDsHUqJYCDMFbnwAjUaEww/hCgbViEv4gAzgHWp5QAkc8BVXbNyPexev2NQMUlMPoUFGB2m80aotnXnXE81QGKSmDnTyTALXPgit0mS6hWXOct6xHh/KcDFJPAzp9UgCxdIHLIVl1X1t1fBygkgZ3/Nq7Zb+Dt9WnZbvI3dCs/anx18LP/YTJUB8j6cNyqEGbd9SOtc/oOsLoL/C+MIztCpNBXeCzlGnF3yF7YEaNRlRk/Wpcv0QGidIG90H5GiOiBr/JQ4uXu4fm9UoG9ycbapD0EAwQ4uFt4v4Ddv30HIIG6lhDgyK5Bgjjhj3wuC98BHGpzE339Sh+CdQF1LCGAUcjo074DkED4249AJBB+ZwCzrDqdSNhHIUYvkFeX1DVtBzijyLqB8KcegUgg/G1HoBEh7jgSqV2BQ/BZxe/WDYS/SAcYEeDK3UCdigowYhevJILaNBBg1CiTebHVo5kAI+f5TAuvBo0FGH2ojRyCrvdNgMlhiBSKLvdJgMABmRmUavdDgGISnBmirNdNABKkpstfxlsJQATB/5fNIqNzXVp2AN1A8AlABJ2QAD1FEHwCtBRB8AnQTgahJ0BLEQSfAK2EEHgCtBJC4AnQRgphJwAwBN8RBgIABAAIABAAIABAAIAAAAEAAgAEAAgAEAAgAEAAgAAAAQACAAQACAAQACAAQACAAAABAAIABAAIAKzhN6uDkE+ZEIsRAAAAAElFTkSuQmCC">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAE2klEQVR42u3d3U0cQRBFYe9o04BoLEjAElk4GEcBkhNAcjQkgh8sv1iWBnamu+vnO882zFTf01W9zO5e7h6e378ATdmUAAQACAAQACAAQACAAAABAAIABAAIABAAIABAAIAAAAEAAgAEAAgAEAAgAEAAgAAAAQACAAQACAAQACAAMJurEozl7fXp8M+4f3xRyEFcfDx6rLCTggACTwgCCDwhCCD4RCCA0JOBAIJPBAIIPhEIIPhEIIDgE+EcNuFH57q06gCCrxu0FWBl+I+EKet1E6Bp+GeExjNHBAgTlAgB6XKfBAgSishh6HrfBJgQgkwBUIOmAoxY+MyLrh6NBDh7sSsttNoUF+DMBa78yoc6FRTgrEXt9CiAmv1hs5D9wn/m/Wb/63rqDuATF9SxbQcQ/ljdIGsn2IQfnSVINwIdLbLgq3GpQ7Dwq1MbAY7sTMI/r16ZRqFN+NFZgk340VmCzeKhcx3DC+B9vLmJvn5b1eLZ/Y1CbUcg4VfX9ALcumsIf0wJonYB3xGG1oR8FKLq7v/r248P/9uvP7+XPNxGW6MyX5IXMfyfCfze/40mxP3jS4lX6MIJUKGoR4K/9zOjd4aPrG+kzapEB4hQ0BGh3/s9q2Wo0AW2aLuDHT/+7620zuk7wMrdP0IAV49G2buAl0GL7L5ZuwEBDrTFVbt/1LCtuq5b1iFK19ABiu20OkFCAbLs/lnCteI6s3YBHaDozqoTFBZg9u6fNUyzrzvjg4g6QPGdVCcILkDk15CrhCfyfaxe/3QdwPP+1scIZPc3ChFAWNxXcgF84gNW5yBVBzD/WycjkDHB/REAIIDd0X3mFcABGBHykKYDOAA7CBuBAAKYi90vAQACAAQACAAQACAAQACAAAABAAIABNgh+zevuF8CAHUF8P6BXGRZr2UCeL4fEfJgBGo4F5v/CQAQoOPuaPdPLICDsHUqJYCDMFbnwAjUaEww/hCgbViEv4gAzgHWp5QAkc8BVXbNyPexev2NQMUlMPoUFGB2m80aotnXnXE81QGKSmDnTyTALXPgit0mS6hWXOct6xHh/KcDFJPAzp9UgCxdIHLIVl1X1t1fBygkgZ3/Nq7Zb+Dt9WnZbvI3dCs/anx18LP/YTJUB8j6cNyqEGbd9SOtc/oOsLoL/C+MIztCpNBXeCzlGnF3yF7YEaNRlRk/Wpcv0QGidIG90H5GiOiBr/JQ4uXu4fm9UoG9ycbapD0EAwQ4uFt4v4Ddv30HIIG6lhDgyK5Bgjjhj3wuC98BHGpzE339Sh+CdQF1LCGAUcjo074DkED4249AJBB+ZwCzrDqdSNhHIUYvkFeX1DVtBzijyLqB8KcegUgg/G1HoBEh7jgSqV2BQ/BZxe/WDYS/SAcYEeDK3UCdigowYhevJILaNBBg1CiTebHVo5kAI+f5TAuvBo0FGH2ojRyCrvdNgMlhiBSKLvdJgMABmRmUavdDgGISnBmirNdNABKkpstfxlsJQATB/5fNIqNzXVp2AN1A8AlABJ2QAD1FEHwCtBRB8AnQTgahJ0BLEQSfAK2EEHgCtBJC4AnQRgphJwAwBN8RBgIABAAIABAAIABAAIAAAAEAAgAEAAgAEAAgAEAAgAAAAQACAAQACAAQACAAQACAAAABAAIABAAIAKzhN6uDkE+ZEIsRAAAAAElFTkSuQmCC">
+<title>Bord</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,400..700&display=swap">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#F5F7FC; --surface:#FFFFFF; --ink:#12204A; --muted:#56638A; --line:#DDE4F2;
+  --delft:#1D46A8; --delft-2:#4F72C9; --delft-soft:#E4EBFA; --on-delft:#FFFFFF;
+  --caramel:#A8660C; --caramel-2:#D99A3A; --caramel-soft:#F8EBD6;
+  --good:#17744E; --delta:#0E7C6B; --good-soft:#DDF1E7; --bad:#B0281F; --bad-soft:#FBE3E0;
+  --font-display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --font-body:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B1128; --surface:#131B38; --ink:#E8EDFB; --muted:#9BA7C8; --line:#253056;
+    --delft:#8AA8F2; --delft-2:#5E7FD6; --delft-soft:#1B2852; --on-delft:#0B1128;
+    --caramel:#E8AE55; --caramel-2:#B77F2A; --caramel-soft:#3A2A12;
+    --good:#6BCB9A; --delta:#5CCBB7; --good-soft:#123326; --bad:#F2887D; --bad-soft:#3D1714;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B1128; --surface:#131B38; --ink:#E8EDFB; --muted:#9BA7C8; --line:#253056;
+  --delft:#8AA8F2; --delft-2:#5E7FD6; --delft-soft:#1B2852; --on-delft:#0B1128;
+  --caramel:#E8AE55; --caramel-2:#B77F2A; --caramel-soft:#3A2A12;
+  --good:#6BCB9A; --delta:#5CCBB7; --good-soft:#123326; --bad:#F2887D; --bad-soft:#3D1714;
+  color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 var(--font-body);-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+body.locked{overflow:hidden}
+h1,h2,h3{font-family:var(--font-display);font-weight:650;letter-spacing:-0.01em;margin:0}
+h1{font-size:1.6rem}
+h2{font-size:1.1rem}
+h3{font-size:1.05rem}
+p{margin:0}
+img{max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--delft-2);outline-offset:2px;border-radius:6px}
+.muted{color:var(--muted)}
+.small{font-size:.875rem}
+.num{font-variant-numeric:tabular-nums}
+main{max-width:560px;margin:0 auto;padding:8px 16px calc(96px + env(safe-area-inset-bottom,0px))}
+.top{display:flex;align-items:center;gap:6px;min-height:52px;margin-bottom:8px}
+.spacer{flex:1}
+.icon-btn{display:inline-grid;place-items:center;width:44px;height:44px;border:0;background:transparent;border-radius:12px;color:var(--ink);cursor:pointer}
+.icon-btn:disabled{opacity:.3;cursor:default}
+.icon-btn svg{width:22px;height:22px}
+.icon-btn.sm{width:36px;height:36px}
+.icon-btn.sm svg{width:16px;height:16px;color:var(--muted)}
+svg.i{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.date-btn{border:0;background:transparent;font-family:var(--font-display);font-size:1.35rem;font-weight:650;padding:6px 4px;cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:10px 18px;border-radius:14px;border:0;background:var(--delft);color:var(--on-delft);font-weight:700;cursor:pointer;text-align:center}
+.btn:disabled{opacity:.45;cursor:default}
+.btn-quiet{background:var(--delft-soft);color:var(--delft)}
+.btn-line{background:transparent;color:var(--delft);border:1.5px solid var(--line)}
+.btn-wide{width:100%;margin-top:12px}
+.link{border:0;background:none;color:var(--delft);font-weight:700;padding:8px 4px;cursor:pointer}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.lead{color:var(--muted);margin-bottom:4px}
+
+/* hero */
+.hero{padding:6px 0 18px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.hero-num{font-family:var(--font-display);font-size:clamp(3.4rem,17vw,4.8rem);line-height:1;font-weight:700;letter-spacing:-0.035em;font-variant-numeric:tabular-nums;font-variation-settings:"opsz" 96}
+.hero-num .unit{font-size:1rem;letter-spacing:0;font-weight:600;margin-left:8px;color:var(--muted)}
+.hero-num.is-under{color:var(--delft)}
+.hero-num.is-over{color:var(--caramel)}
+.hero-cap{margin-top:8px;font-weight:700}
+.hero-sub{margin-top:10px;color:var(--muted);font-size:.925rem}
+.hero .btn{margin-top:14px}
+.balance{margin-top:16px;display:grid;gap:8px}
+.bal-row{display:grid;grid-template-columns:64px 1fr 58px;align-items:center;gap:10px}
+.bal-label{font-size:.875rem;color:var(--muted)}
+.bal-val{font-variant-numeric:tabular-nums;text-align:right;font-weight:700;font-size:.925rem}
+.bal-track{position:relative;height:14px;border-radius:7px;background:var(--delft-soft);overflow:visible}
+.bal-fill{position:absolute;left:0;top:0;bottom:0;border-radius:7px}
+.bal-fill.burn{background:var(--delft)}
+.bal-fill.eat{background:var(--caramel-2)}
+.bal-mark{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink);border-radius:1px}
+
+/* macros + garmin strip */
+.macros{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.macro b{display:block;font-family:var(--font-display);font-size:1.25rem;font-variant-numeric:tabular-nums}
+.macro span{font-size:.8rem;color:var(--muted)}
+.mbar{height:5px;border-radius:3px;background:var(--line);margin-top:6px;overflow:hidden}
+.mbar i{display:block;height:100%;background:var(--good);border-radius:3px}
+.strip{display:block;width:100%;text-align:left;border:0;background:transparent;padding:14px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.strip-head{display:flex;justify-content:space-between;align-items:baseline}
+.strip-head span{color:var(--delft);font-weight:700;font-size:.9rem}
+.stats{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:6px}
+.stat{font-size:.9rem}
+.stat b{font-variant-numeric:tabular-nums}
+.note{font-size:.85rem;color:var(--muted);margin-top:6px}
+
+/* meals */
+.meal{padding:14px 0 6px;border-bottom:1px solid var(--line)}
+.meal-head{display:flex;align-items:baseline;gap:10px}
+.meal-head .kc{color:var(--muted);font-size:.9rem;font-variant-numeric:tabular-nums}
+.meal-head .link{margin-left:auto}
+.entries{list-style:none;margin:4px 0 0;padding:0}
+.entries li{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:8px;padding:6px 0}
+.e-name{display:block;font-weight:700;line-height:1.3}
+.e-qty{display:block;font-size:.825rem;color:var(--muted)}
+.e-kcal{font-variant-numeric:tabular-nums;font-weight:700}
+
+/* add */
+.seg{display:flex;gap:4px;padding:4px;border-radius:14px;background:var(--delft-soft);margin:6px 0 16px}
+.seg button{flex:1;min-height:40px;border:0;border-radius:10px;background:transparent;color:var(--delft);font-weight:700;font-size:.875rem;cursor:pointer}
+.seg button[aria-checked="true"],.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 0 0 1px var(--line)}
+.methods{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.method{display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-height:124px;padding:16px;border-radius:18px;border:1px solid var(--line);background:var(--surface);text-align:left;cursor:pointer}
+.method svg{width:28px;height:28px;color:var(--delft);margin-bottom:auto}
+.method .m-title{font-family:var(--font-display);font-weight:650;font-size:1.05rem;margin-top:12px}
+.method .m-desc{font-size:.8rem;color:var(--muted);line-height:1.3}
+.method:first-child{background:var(--delft);border-color:var(--delft)}
+.method:first-child svg,.method:first-child .m-title{color:var(--on-delft)}
+.method:first-child .m-desc{color:var(--on-delft);opacity:.8}
+.section-title{margin:22px 0 6px}
+.list{list-style:none;margin:0;padding:0}
+.list li{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.plus{width:36px;height:36px;border-radius:10px;border:0;background:var(--delft-soft);color:var(--delft);display:grid;place-items:center;cursor:pointer}
+.plus svg{width:18px;height:18px}
+
+/* fields */
+.field{display:block;margin-top:14px}
+.field>span{display:block;font-size:.875rem;color:var(--muted);margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;min-height:48px;padding:10px 12px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface)}
+.field textarea{min-height:0;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--delft-2);outline:none}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.err{color:var(--bad);font-size:.875rem;margin-top:8px}
+.check{display:flex;align-items:center;gap:10px;padding:10px 0;cursor:pointer}
+.check input{width:22px;height:22px;accent-color:var(--delft)}
+
+/* sheet */
+.sheet{position:fixed;top:0;left:0;right:0;bottom:0;z-index:20;background:var(--bg);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.sheet[hidden]{display:none}
+.sheet-head{display:flex;align-items:center;gap:6px;padding:6px 8px;border-bottom:1px solid var(--line)}
+.sheet-head h2{font-size:1.15rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sheet-body{flex:1;overflow:auto;-webkit-overflow-scrolling:touch}
+.sheet-inner{max-width:560px;margin:0 auto;padding:16px 16px 40px}
+.thumbs{display:flex;gap:8px;overflow-x:auto;margin-top:14px}
+.thumb{width:96px;height:96px;object-fit:cover;border-radius:12px;border:1px solid var(--line);flex:none}
+span.thumb{display:inline-block;background:var(--delft-soft)}
+.thinking{display:grid;justify-items:center;text-align:center;gap:10px;padding:48px 0}
+.pulse{width:56px;height:56px;border-radius:50%;background:var(--delft-soft);position:relative}
+.pulse::after{content:"";position:absolute;inset:14px;border-radius:50%;background:var(--delft)}
+@media (prefers-reduced-motion: no-preference){.pulse::after{animation:pulse 1.4s ease-in-out infinite}}
+@keyframes pulse{0%,100%{transform:scale(.7);opacity:.7}50%{transform:scale(1);opacity:1}}
+.notice{padding:14px;border-radius:14px;background:var(--caramel-soft);margin-top:10px}
+
+/* estimates */
+.est{padding:14px 0;border-bottom:1px solid var(--line)}
+.est-top{display:flex;align-items:center;gap:10px}
+.est-top input[type=checkbox]{width:22px;height:22px;accent-color:var(--delft);flex:none}
+.name-in{flex:1;min-width:0;border:0;border-bottom:1.5px dashed var(--line);background:transparent;font-weight:700;padding:4px 0}
+.est-kcal{font-family:var(--font-display);font-size:1.3rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+.est input[type=range]{width:100%;margin:14px 0 2px;accent-color:var(--caramel)}
+.range-ends{display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.est.off{opacity:.45}
+.total-row{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0 4px}
+.total-row b{font-family:var(--font-display);font-size:1.5rem;font-variant-numeric:tabular-nums}
+.tag{display:inline-block;font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:999px}
+.tag.good{background:var(--good-soft);color:var(--good)}
+.tag.conf{background:var(--delft-soft);color:var(--delft)}
+
+/* menu dishes */
+.dish{display:grid;grid-template-columns:1fr auto;gap:2px 12px;width:100%;text-align:left;border:0;border-bottom:1px solid var(--line);background:transparent;padding:12px 0;cursor:pointer}
+.d-name{font-weight:700}
+.d-kcal{font-family:var(--font-display);font-weight:650;font-variant-numeric:tabular-nums;white-space:nowrap;grid-row:span 2;align-self:center;text-align:right}
+.d-sub{font-size:.825rem;color:var(--muted)}
+.menu-sec{margin-top:18px;color:var(--caramel)}
+
+/* food search + portion */
+.food-row{display:block;width:100%;text-align:left;border:0;border-bottom:1px solid var(--line);background:transparent;padding:12px 0;cursor:pointer}
+.food-row b{display:block}
+.food-row span{font-size:.825rem;color:var(--muted)}
+.prod-head{padding-bottom:6px}
+.amount-row{display:grid;grid-template-columns:1fr 1.4fr;gap:12px}
+.calc{margin-top:18px;padding:16px;border-radius:16px;background:var(--surface);border:1px solid var(--line)}
+.calc b{font-family:var(--font-display);font-size:2rem;font-variant-numeric:tabular-nums}
+
+/* trends */
+.statgrid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);margin-top:8px}
+.statgrid div{padding:12px 0;border-bottom:1px solid var(--line)}
+.statgrid div:nth-child(odd){padding-right:12px;border-right:1px solid var(--line)}
+.statgrid div:nth-child(even){padding-left:12px}
+.statgrid dt{font-size:.8rem;color:var(--muted)}
+.statgrid dd{margin:0;font-family:var(--font-display);font-size:1.35rem;font-weight:650;font-variant-numeric:tabular-nums}
+.chart-block{margin-top:26px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.8rem;color:var(--muted);margin:6px 0}
+.legend i{display:inline-block;width:14px;height:4px;border-radius:2px;vertical-align:middle;margin-right:6px}
+.chart-wrap{overflow-x:auto}
+.chart{width:100%;height:auto;display:block;overflow:visible}
+.chart .grid{stroke:var(--line);stroke-width:1}
+.chart .ax{fill:var(--muted);font-family:var(--font-body);font-size:10.5px}
+.chart .ln{fill:none;stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round}
+.chart .burn{stroke:var(--delft);fill:var(--delft)}
+.chart .eat{stroke:var(--caramel-2);fill:var(--caramel-2)}
+.chart .ln.burn,.chart .ln.eat,.chart .ln.wavg,.chart .ln.m{fill:none}
+.chart .w{fill:var(--delft-2);opacity:.5}
+.chart .ln.wavg{stroke:var(--delft)}
+.chart .m{stroke:var(--delft);fill:var(--delft)}
+.chart .bar.neg{fill:var(--delft)}
+.chart .bar.pos{fill:var(--caramel-2)}
+.chart .zero{stroke:var(--muted);stroke-width:1}
+.chart .ref{stroke:var(--muted);stroke-width:1;stroke-dasharray:4 4}
+.chart .reg{stroke:var(--caramel);stroke-width:2.2;fill:none}
+.chart .exp{stroke:var(--muted);stroke-width:1.4;stroke-dasharray:5 4;fill:none}
+.chart .pt{fill:var(--delft);opacity:.8}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 4px}
+.chip{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:6px 12px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);font-size:.85rem;font-weight:700;color:var(--ink);cursor:pointer}
+.chip i{display:inline-block;width:14px;height:4px;border-radius:2px}
+.chip[aria-pressed="false"]{color:var(--muted);background:transparent;text-decoration:line-through}
+.chip[aria-pressed="false"] i{opacity:.3}
+.axis-caps{display:flex;justify-content:space-between;gap:12px;font-size:.75rem;color:var(--muted);margin-top:6px}
+.axis-caps .r{color:var(--delta);margin-left:auto}
+.seg.small button{font-size:.8rem;padding:0 2px}
+.chart .delta{stroke:var(--delta);fill:var(--delta)}
+.chart .ln.delta{fill:none;stroke-dasharray:6 3}
+.chart .axr{fill:var(--delta)}
+.chart .wrange{fill:var(--delft-2);opacity:.35}
+.chart .wavg{stroke:var(--delft);fill:var(--delft)}
+.chart-empty{padding:28px 12px;text-align:center;color:var(--muted);font-size:.9rem;border:1.5px dashed var(--line);border-radius:14px;margin-top:6px}
+.cap{font-size:.85rem;color:var(--muted);margin-top:8px}
+
+/* garmin */
+.days-table{width:100%;border-collapse:collapse;font-size:.9rem;font-variant-numeric:tabular-nums}
+.days-table th{font-weight:400;color:var(--muted);text-align:right;padding:6px 4px;border-bottom:1px solid var(--line)}
+.days-table th:first-child,.days-table td:first-child{text-align:left}
+.days-table td{text-align:right;padding:8px 4px;border-bottom:1px solid var(--line)}
+.tbl-wrap{overflow-x:auto}
+
+/* tabbar + toast */
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:10;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.tabbar-inner{display:grid;grid-template-columns:repeat(4,1fr);max-width:560px;margin:0 auto}
+.tab{display:flex;flex-direction:column;align-items:center;gap:2px;min-height:60px;padding:8px 0 6px;border:0;background:transparent;color:var(--muted);font-size:.75rem;font-weight:700;cursor:pointer}
+.tab svg{width:24px;height:24px}
+.tab[aria-current="page"]{color:var(--delft)}
+.tab.add svg{width:30px;height:30px;padding:4px;border-radius:10px;background:var(--delft);color:var(--on-delft)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:30;display:flex;align-items:center;gap:12px;max-width:calc(100% - 32px);padding:10px 16px;border-radius:14px;background:var(--ink);color:var(--bg);font-size:.925rem}
+.toast[hidden]{display:none}
+.scan-box{position:relative;border-radius:16px;overflow:hidden;background:#000;aspect-ratio:4/3;margin-top:4px}
+.scan-box[hidden]{display:none}
+.scan-box video{width:100%;height:100%;object-fit:cover;display:block}
+.scan-line{position:absolute;left:12%;right:12%;top:50%;height:2px;background:var(--caramel-2);box-shadow:0 0 0 1px rgba(0,0,0,.2)}
+.setup{margin-bottom:12px}
+.setup .btn{margin-top:10px}
+.off-area{margin-top:18px}
+.toast .link{color:var(--caramel-2)}
+</style>
+</head>
+<body>
+<main id="view" aria-live="polite"></main>
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true"></div>
+<div class="toast" id="toast" hidden role="status"></div>
+<nav class="tabbar" aria-label="Sections"><div class="tabbar-inner" id="tabs"></div></nav>
+
+<script>
+'use strict';
+/* ---------- helpers ---------- */
+const $ = (s, r) => (r || document).querySelector(s);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const num = v => { if (v === null || v === undefined || v === '') return null; const n = typeof v === 'number' ? v : parseFloat(String(v).replace(',', '.')); return Number.isFinite(n) ? n : null; };
+const round = (v, d) => { const p = Math.pow(10, d || 0); return Math.round(v * p) / p; };
+const fmt = v => v == null ? '–' : Math.round(v).toLocaleString('en-GB');
+const fmt1 = v => v == null ? '–' : round(v, 1).toLocaleString('en-GB');
+const fmtSigned = v => v == null ? '–' : (v > 0.5 ? '+' : v < -0.5 ? '−' : '') + Math.abs(Math.round(v)).toLocaleString('en-GB');
+const fmtAxis = v => { const a = Math.abs(v); const s = a >= 1000 ? round(a / 1000, 1) + 'k' : String(round(a, 1)); return (v < 0 ? '−' : '') + s; };
+const mean = a => a.reduce((s, x) => s + x, 0) / a.length;
+const rid = () => Math.random().toString(36).slice(2, 10) + Date.now().toString(36).slice(-4);
+const clone = o => JSON.parse(JSON.stringify(o));
+const norm = s => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+const z2 = n => String(n).padStart(2, '0');
+const ymd = d => d.getFullYear() + '-' + z2(d.getMonth() + 1) + '-' + z2(d.getDate());
+const todayStr = () => ymd(new Date());
+const parseYmd = s => { const p = s.split('-').map(Number); return new Date(p[0], p[1] - 1, p[2]); };
+const addDays = (s, n) => { const d = parseYmd(s); d.setDate(d.getDate() + n); return ymd(d); };
+const shortDate = s => parseYmd(s).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+const longDate = s => parseYmd(s).toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+function fmtDate(s) {
+  const t = todayStr();
+  if (s === t) return 'Today';
+  if (s === addDays(t, -1)) return 'Yesterday';
+  return parseYmd(s).toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+}
+
+const ICON = {
+  left: '<svg class="i" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>',
+  right: '<svg class="i" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>',
+  x: '<svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+  back: '<svg class="i" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>',
+  plus: '<svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>',
+  plate: '<svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/></svg>',
+  chart: '<svg class="i" viewBox="0 0 24 24"><path d="M4 19h16"/><path d="M5 15l4-5 4 3 6-7"/></svg>',
+  watch: '<svg class="i" viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="3"/><path d="M9 6.5L10 3h4l1 3.5M9 17.5l1 3.5h4l1-3.5M12 9.5V12l1.5 1.5"/></svg>',
+  camera: '<svg class="i" viewBox="0 0 24 24"><path d="M4 8.5h3.2L9 6h6l1.8 2.5H20V19H4z"/><circle cx="12" cy="13.2" r="3.4"/></svg>',
+  barcode: '<svg class="i" viewBox="0 0 24 24"><path d="M4 6v12M7 6v12M10.5 6v12M13 6v12M16.5 6v12M20 6v12"/></svg>',
+  search: '<svg class="i" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></svg>',
+  menu: '<svg class="i" viewBox="0 0 24 24"><path d="M6 3.5h12v17H6z"/><path d="M9 8h6M9 12h6M9 16h3.5"/></svg>',
+  sliders: '<svg class="i" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>'
+};
+
+const MEALS = [['breakfast', 'Breakfast'], ['lunch', 'Lunch'], ['dinner', 'Dinner'], ['snack', 'Snacks']];
+const mealName = k => (MEALS.find(m => m[0] === k) || MEALS[3])[1];
+function defaultMeal() {
+  const h = new Date().getHours() + new Date().getMinutes() / 60;
+  if (h < 10.5) return 'breakfast';
+  if (h < 14.5) return 'lunch';
+  if (h >= 17 && h < 21) return 'dinner';
+  return 'snack';
+}
+
+/* ---------- health metric modules ----------
+   Each metric is one entry. Adding a new Garmin metric (e.g. sleep score,
+   stress, steps) = adding one line here: it then appears in the manual form,
+   the screenshot reader, the Garmin table and the trend charts. */
+const METRICS = [
+  { id: 'total',  label: 'Calories burned, total', short: 'Burned', unit: 'kcal', step: 1,   core: true, ai: 'total calories burned for the day (resting + active), in kcal' },
+  { id: 'active', label: 'Active calories',        short: 'Active', unit: 'kcal', step: 1,   core: true, ai: 'active calories for the day, in kcal' },
+  { id: 'weight', label: 'Weight',                 short: 'Weight', unit: 'kg',   step: 0.1, core: true, multi: true, ai: 'every weigh-in shown for this day, in kg, as an array of numbers (convert from lb if shown in lb); one weigh-in is an array with one number' },
+  { id: 'rhr',    label: 'Resting heart rate',     short: 'RHR',    unit: 'bpm',  step: 1,   module: 'rhr',   title: 'Resting heart rate', ai: 'resting heart rate in beats per minute' },
+  { id: 'hrv',    label: 'Overnight HRV',          short: 'HRV',    unit: 'ms',   step: 1,   module: 'hrv',   title: 'Overnight HRV', ai: 'overnight HRV average (last night average) in ms' },
+  { id: 'sleep',  label: 'Sleep',                  short: 'Sleep',  unit: 'h',    step: 0.1, module: 'sleep', title: 'Sleep', ai: 'total sleep duration in hours, as a decimal number' }
+];
+const enabledMetrics = () => METRICS.filter(m => m.core || (state.settings.modules || {})[m.module]);
+
+/* ---------- built-in Dutch staples (typical values per 100 g or ml) ---------- */
+const BUILTIN_RAW = [
+  ['Volkorenbrood (wholemeal bread)', 220, 9.5, 38, 2.5, '1 slice:35'],
+  ['Bruinbrood (brown bread)', 235, 9, 42, 2.5, '1 slice:35'],
+  ['Witbrood (white bread)', 250, 8.5, 48, 2, '1 slice:35'],
+  ['Krentenbol (currant bun)', 280, 8, 50, 4, '1 bun:60'],
+  ['Beschuit (Dutch rusk)', 400, 11, 75, 5, '1 rusk:10'],
+  ['Croissant', 410, 8, 45, 21, '1 croissant:50'],
+  ['Havermout (rolled oats)', 370, 13, 59, 7, '1 portion:40'],
+  ['Muesli', 360, 10, 60, 7, '1 bowl:50'],
+  ['Hagelslag, melk (chocolate sprinkles)', 470, 5, 71, 18, 'on 1 slice:15'],
+  ['Pindakaas (peanut butter)', 610, 25, 12, 50, 'on 1 slice:15|1 tbsp:16'],
+  ['Jam', 250, 0.4, 60, 0.1, 'on 1 slice:15'],
+  ['Appelstroop (apple syrup)', 280, 1, 65, 0.2, 'on 1 slice:15'],
+  ['Goudse kaas 48+ (young Gouda)', 360, 24, 0, 29, '1 slice:20|1 cube:10'],
+  ['Kaas 30+ (reduced-fat cheese)', 270, 30, 0, 16, '1 slice:20'],
+  ['Roomboter (butter)', 740, 0.6, 0.6, 82, 'on 1 slice:5|1 tbsp:12'],
+  ['Halvarine (light margarine)', 350, 0, 0, 38, 'on 1 slice:5'],
+  ['Halfvolle melk (semi-skimmed milk)', 46, 3.5, 4.7, 1.5, '1 glass:200|1 mug:250', 'ml'],
+  ['Karnemelk (buttermilk)', 38, 3.3, 4, 0.5, '1 glass:200', 'ml'],
+  ['Magere yoghurt (fat-free yoghurt)', 36, 4, 4.3, 0.1, '1 bowl:150'],
+  ['Volle yoghurt (whole yoghurt)', 62, 3.8, 4.5, 3.2, '1 bowl:150'],
+  ['Griekse yoghurt 10% (Greek yoghurt)', 120, 4, 4, 10, '1 bowl:150'],
+  ['Magere kwark (quark, fat-free)', 58, 9.5, 4, 0.2, '1 bowl:150|1 tub:500'],
+  ['Ei, gekookt (boiled egg)', 140, 12.5, 0.4, 10, '1 egg:55'],
+  ['Banaan (banana)', 90, 1.2, 20, 0.3, '1 banana:120'],
+  ['Appel (apple)', 52, 0.3, 12, 0.2, '1 apple:150'],
+  ['Mandarijn (mandarin)', 45, 0.8, 10, 0.3, '1 mandarin:70'],
+  ['Aardappelen, gekookt (boiled potatoes)', 80, 1.9, 17, 0.1, '1 potato:70|1 serving:200'],
+  ['Rijst, gekookt (cooked rice)', 130, 2.7, 28, 0.3, '1 serving:180'],
+  ['Pasta, gekookt (cooked pasta)', 150, 5.3, 30, 0.9, '1 serving:200'],
+  ['Stamppot boerenkool (kale mash)', 95, 2.8, 12, 3.8, '1 serving:350'],
+  ['Hutspot', 80, 1.5, 12, 2.8, '1 serving:350'],
+  ['Rookworst (smoked sausage)', 300, 13, 2, 27, '1 piece:65|whole sausage:275'],
+  ['Erwtensoep (split pea soup)', 100, 6, 10, 4, '1 bowl:300'],
+  ['Kipfilet, gebakken (chicken breast)', 160, 31, 0, 3.5, '1 fillet:130'],
+  ['Gehaktbal (meatball)', 230, 18, 6, 15, '1 meatball:100'],
+  ['Zalm, gebakken (salmon)', 200, 20, 0, 13, '1 fillet:125'],
+  ['Haring (Dutch herring)', 230, 14, 0, 19, '1 herring:80'],
+  ['Kibbeling (fried fish pieces)', 240, 14, 13, 15, '1 portion:150'],
+  ['Frikandel', 260, 12, 10, 19, '1 frikandel:70'],
+  ['Kroket (croquette)', 260, 7, 22, 16, '1 kroket:75'],
+  ['Bitterbal', 290, 7, 20, 20, '1 bitterbal:20'],
+  ['Patat (fries)', 290, 3.5, 36, 14, 'small portion:150|medium portion:225'],
+  ['Fritessaus', 280, 0.5, 10, 26, '1 portion:30'],
+  ['Mayonaise', 700, 1, 1.5, 77, '1 portion:30|1 tbsp:15'],
+  ['Pindasaus (satay sauce)', 200, 6, 12, 14, '1 portion:50'],
+  ['Nasi goreng', 170, 6, 22, 6, '1 serving:350'],
+  ['Pannenkoek (plain pancake)', 220, 7, 28, 9, '1 pancake:110'],
+  ['Stroopwafel', 450, 3.5, 64, 19, '1 stroopwafel:30'],
+  ['Ontbijtkoek (spiced breakfast cake)', 300, 4, 68, 1.5, '1 slice:25'],
+  ['Speculaas', 470, 6, 68, 19, '1 biscuit:12'],
+  ['Appeltaart (apple pie)', 260, 3, 35, 12, '1 slice:120'],
+  ['Tompouce', 330, 3, 40, 17, '1 tompouce:95'],
+  ['Drop (liquorice)', 350, 3, 80, 0.5, '1 handful:25'],
+  ['Chips, naturel (crisps)', 540, 6, 50, 34, '1 handful:30|small bag:40'],
+  ['Broccoli, gekookt', 30, 3, 3, 0.4, '1 serving:150'],
+  ['Sperziebonen (green beans)', 30, 2, 4, 0.2, '1 serving:150'],
+  ['Tomaat (tomato)', 18, 0.9, 3.5, 0.2, '1 tomato:100'],
+  ['Olijfolie (olive oil)', 880, 0, 0, 100, '1 tbsp:13|1 tsp:4.5'],
+  ['Pils (lager beer)', 43, 0.4, 3.5, 0, '1 glass:220|1 can:330', 'ml'],
+  ['Rode wijn (red wine)', 83, 0.1, 2.6, 0, '1 glass:150', 'ml'],
+  ['Cola', 42, 0, 10.6, 0, '1 glass:250|1 can:330', 'ml'],
+  ['Cappuccino (semi-skimmed milk)', 38, 2.4, 3.4, 1.5, '1 cup:180', 'ml'],
+  ['Sinaasappelsap (orange juice)', 45, 0.7, 10, 0.2, '1 glass:200', 'ml']
+];
+const BUILTIN = BUILTIN_RAW.map((r, i) => ({
+  id: 'b-' + i, name: r[0], brand: '', unit: r[6] || 'g', source: 'builtin',
+  per100: { kcal: r[1], protein: r[2], carbs: r[3], fat: r[4] },
+  portions: r[5].split('|').map(p => { const k = p.lastIndexOf(':'); return { label: p.slice(0, k), grams: +p.slice(k + 1) }; })
+}));
+const BUILTIN_MAP = Object.fromEntries(BUILTIN.map(b => [b.id, b]));
+
+/* ---------- state ---------- */
+const state = {
+  view: 'today', date: todayStr(), addMeal: defaultMeal(), range: 30, scatter: 'weekly',
+  garminDate: todayStr(), days: {}, products: {}, lastMenu: null,
+  settings: { targetDelta: -500, proteinPerKg: 1.6, model: 'claude-sonnet-5', modules: { rhr: true, hrv: true, sleep: false } }
+};
+let sheetState = null;
+let recentCache = [];
+
+function getDay(date) { return state.days[date] || { date, entries: [], metrics: {} }; }
+function ensureDay(date) {
+  if (!state.days[date]) state.days[date] = { date, entries: [], metrics: {} };
+  const d = state.days[date];
+  d.entries = d.entries || []; d.metrics = d.metrics || {};
+  return d;
+}
+function dayTotals(day) {
+  const t = { kcal: 0, p: 0, c: 0, f: 0 };
+  ((day && day.entries) || []).forEach(e => { t.kcal += +e.kcal || 0; t.p += +e.p || 0; t.c += +e.c || 0; t.f += +e.f || 0; });
+  return t;
+}
+/* Metrics marked multi (weight) keep every reading of the day in day.readings[id];
+   day.metrics[id] holds the day's average so everything else keeps working. */
+function readingsOf(day, id) {
+  if (!day) return [];
+  const r = day.readings && day.readings[id];
+  if (Array.isArray(r) && r.length) return r.map(num).filter(v => v != null);
+  const v = num(day.metrics && day.metrics[id]);
+  return v != null ? [v] : [];
+}
+function parseMulti(v) {
+  if (Array.isArray(v)) return v.map(num).filter(x => x != null && x > 0);
+  const t = String(v == null ? '' : v).replace(/(\d),(\d)/g, '$1.$2');
+  return t.split(/[\s,;\/+]+/).map(num).filter(x => x != null && x > 0);
+}
+function formVals(date) {
+  const day = getDay(date), out = Object.assign({}, day.metrics || {});
+  METRICS.filter(m => m.multi).forEach(m => { out[m.id] = readingsOf(day, m.id); });
+  return out;
+}
+function latestWeight(upTo) {
+  const ds = Object.keys(state.days).filter(d => d <= upTo).sort().reverse();
+  for (const d of ds) { const w = num(state.days[d].metrics && state.days[d].metrics.weight); if (w != null) return w; }
+  return null;
+}
+function budgetLeft(date) {
+  const day = getDay(date); const b = num(day.metrics && day.metrics.total);
+  if (b == null) return null;
+  return b + (num(state.settings.targetDelta) ?? -500) - dayTotals(day).kcal;
+}
+
+/* ---------- storage: Claude account (db) with a browser cache ---------- */
+const LS_KEY = 'bord.v1';
+const KEY_LS = 'bord.apikey';
+function loadCache() {
+  try {
+    const j = JSON.parse(localStorage.getItem(LS_KEY) || 'null');
+    if (j) { state.days = j.days || {}; state.products = j.products || {}; Object.assign(state.settings, j.settings || {}); }
+  } catch (e) { /* storage unavailable */ }
+}
+let persistAsked = false;
+function saveCache() {
+  try { localStorage.setItem(LS_KEY, JSON.stringify({ v: 1, days: state.days, products: state.products, settings: state.settings })); }
+  catch (e) { toast('Couldn’t save on this phone. Storage may be full; export a backup in Settings.'); }
+  if (!persistAsked && navigator.storage && navigator.storage.persist) { persistAsked = true; navigator.storage.persist().catch(() => {}); }
+}
+const Store = {
+  saveDay(date) { const d = state.days[date]; if (d) d.updatedAt = Date.now(); saveCache(); render(); },
+  saveProduct(p) { state.products[p.id] = p; saveCache(); },
+  saveSettings() { saveCache(); render(); }
+};
+
+/* ---------- Claude API (your own key) ---------- */
+const IMG_MAX = 5;
+const MODELS = [['claude-sonnet-5', 'Sonnet 5 (recommended)'], ['claude-haiku-4-5-20251001', 'Haiku 4.5 (cheapest)'], ['claude-opus-5-5', 'Opus 5.5 (most capable, priciest)']];
+const QUICK_MODEL = 'claude-haiku-4-5-20251001';
+const getKey = () => { try { return localStorage.getItem(KEY_LS) || ''; } catch (e) { return ''; } };
+const photosOK = () => !!getKey();
+function aiBlocker() { return getKey() ? null : 'Add your Claude API key in Settings first.'; }
+async function imageB64(file) { return (await downscale(file, 1568)).toDataURL('image/jpeg', 0.85).split(',')[1]; }
+function parseLooseJSON(t) {
+  t = String(t || '').trim();
+  try { return JSON.parse(t); } catch (e) { /* keep trying */ }
+  const fence = t.match(/```(?:json)?\s*([\s\S]*?)```/i);
+  if (fence) { try { return JSON.parse(fence[1]); } catch (e) { /* keep trying */ } }
+  const starts = ['{', '['].map(c => t.indexOf(c)).filter(i => i >= 0);
+  const a = starts.length ? Math.min(...starts) : -1, b = Math.max(t.lastIndexOf('}'), t.lastIndexOf(']'));
+  if (a >= 0 && b > a) { try { return JSON.parse(t.slice(a, b + 1)); } catch (e) { /* give up */ } }
+  return undefined;
+}
+async function claudeJSON(prompt, opts) {
+  opts = opts || {};
+  const key = getKey();
+  if (!key) throw { code: 'no_key' };
+  const content = [];
+  for (const f of (opts.images || []).slice(0, IMG_MAX)) {
+    let data;
+    try { data = await imageB64(f); } catch (e) { throw { code: 'image_rejected' }; }
+    content.push({ type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data } });
+  }
+  content.push({ type: 'text', text: prompt + '\n\nAnswer with the JSON only, no other text.' });
+  const model = opts.tier === 'quick' ? QUICK_MODEL : (state.settings.model || 'claude-sonnet-5');
+  let res, data = null;
+  try {
+    res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST', signal: opts.signal,
+      headers: { 'content-type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
+      body: JSON.stringify({ model, max_tokens: opts.maxTokens || 4096, messages: [{ role: 'user', content }] })
+    });
+    data = await res.json().catch(() => null);
+  } catch (e) { throw { code: e && e.name === 'AbortError' ? 'cancelled' : 'network' }; }
+  if (opts.signal && opts.signal.aborted) throw { code: 'cancelled' };
+  if (!res.ok) {
+    const msg = (data && data.error && data.error.message) || ('HTTP ' + res.status);
+    let code = 'upstream_error';
+    if (res.status === 401 || res.status === 403) code = 'bad_key';
+    else if (/credit balance/i.test(msg)) code = 'no_credit';
+    else if (res.status === 429) code = 'rate_limited';
+    else if (res.status === 529 || res.status === 503 || res.status === 502) code = 'overloaded';
+    else if (res.status === 404) code = 'bad_model';
+    else if (res.status === 400) code = 'bad_request';
+    throw { code, message: msg };
+  }
+  const text = ((data && data.content) || []).filter(b => b.type === 'text').map(b => b.text).join('\n');
+  const parsed = parseLooseJSON(text);
+  if (parsed === undefined) throw { code: 'invalid_json', message: data && data.stop_reason === 'max_tokens' ? 'The answer was cut off.' : '' };
+  return parsed;
+}
+let aiCtl = null;
+function abortAI() { if (aiCtl) { aiCtl.abort(); aiCtl = null; } }
+function thinkingHTML(msg) {
+  return `<div class="thinking" role="status"><div class="pulse" aria-hidden="true"></div><p><b>${esc(msg)}</b></p><p class="muted small" id="elapsed">This usually takes 5 to 30 seconds.</p><button class="btn btn-line" data-act="stopAI">Stop</button></div>`;
+}
+async function runAI(msg, prompt, opts) {
+  setSheetBody(thinkingHTML(msg));
+  abortAI();
+  const ctl = new AbortController(); aiCtl = ctl;
+  const t0 = Date.now();
+  const timer = setInterval(() => { const el = $('#elapsed'); if (el) el.textContent = Math.round((Date.now() - t0) / 1000) + ' s'; }, 1000);
+  try { return await claudeJSON(prompt, Object.assign({}, opts, { signal: ctl.signal })); }
+  finally { clearInterval(timer); if (aiCtl === ctl) aiCtl = null; }
+}
+function aiErrorText(e) {
+  const map = {
+    cancelled: 'Stopped.',
+    no_key: 'Add your Claude API key in Settings first.',
+    bad_key: 'Claude didn’t accept your API key. Check it in Settings.',
+    no_credit: 'Your Claude API credit has run out. Top up in the Claude Console.',
+    rate_limited: 'Too many requests at once. Wait a minute and try again.',
+    overloaded: 'Claude is busy right now. Try again in a minute.',
+    network: 'No connection to Claude. Check your internet and try again.',
+    bad_model: 'The chosen model isn’t available to your key. Pick another in Settings.',
+    bad_request: 'Claude couldn’t process this request. Try a different photo or shorter text.',
+    image_rejected: 'That image couldn’t be read. Try a different photo.',
+    invalid_json: 'Claude’s answer couldn’t be read. Try again.'
+  };
+  return map[e && e.code] || 'Something went wrong while asking Claude. Try again.';
+}
+function errorHTML(e, retryAct) {
+  const settingsFix = ['no_key', 'bad_key', 'bad_model', 'no_credit'].includes(e && e.code);
+  return `<div class="notice"><p>${esc(aiErrorText(e))}</p>${e && e.message ? `<p class="small muted" style="margin-top:6px">${esc(e.message)}</p>` : ''}</div>
+    ${settingsFix ? '<button class="btn btn-wide" data-act="openSettings">Open settings</button>' : ''}
+    ${retryAct && !settingsFix ? `<button class="btn btn-wide" data-act="${retryAct}">Try again</button>` : ''}
+    <button class="btn btn-line btn-wide" data-act="closeSheet">Close</button>`;
+}
+const LENS_TIP = 'Tip: on Android, Google Lens can copy text from a photo or screenshot; on iPhone, Live Text does the same. Then paste it here.';
+const noPhotoNote = what => `<div class="notice"><p>Add your API key in Settings to use photos, or ${what}</p></div>`;
+function showAIError(e, backFn, retryAct) {
+  if (e && e.code === 'cancelled') { setSheetBody(backFn()); return; }
+  setSheetBody(errorHTML(e, retryAct));
+}
+
+const quoteText = t => '\"\"\"\n' + String(t).replace(/\"\"\"/g, "'''").slice(0, 12000) + '\n\"\"\"';
+const PROMPTS = {
+  estimate: (note, meal, hasImage) => `You estimate food energy for a personal food log used in the Netherlands.
+${hasImage ? 'The image is a photo of food the user is about to eat (' + meal + ').' : 'The user describes food they are eating (' + meal + ').'}
+Identify each distinct food or drink item and estimate its portion${hasImage ? ' as shown' : '; when no amount is given, assume a typical Dutch portion'}. Give a calorie range that honestly reflects uncertainty: portion size, hidden fats (butter, oil, dressing, sauce) and preparation. Keep the range fairly tight (about ±15%) when the item is clear, wider when it is not.
+Use Dutch food composition knowledge (NEVO) and Dutch portion habits where relevant.
+${note ? (hasImage ? 'The user adds:\n' : 'The description:\n') + quoteText(note) + '\n' : ''}
+Reply with only JSON in this shape:
+{"summary":"one short sentence","items":[{"name":"short English name, Dutch name in brackets for Dutch dishes","grams":180,"kcal_low":420,"kcal_mid":500,"kcal_high":600,"protein_g":30,"carbs_g":45,"fat_g":20,"confidence":"low|medium|high","note":"short hint or empty"}]}
+Macros are for the kcal_mid estimate. If there is no food ${hasImage ? 'in the image' : 'in the description'}, reply {"summary":"No food found","items":[]}.`,
+
+  menu: text => `${text ? 'Below is the text of a restaurant or café menu. It was copied from a photo, so it may contain recognition errors.' : 'The images show a restaurant or café menu (one or more pages).'}
+For every dish, estimate the calories of a typical restaurant portion as served, as a range. Restaurant portions often contain generous butter, oil and sauces; include listed sides.
+Keep dish names as printed. If a name is not in English, add a short English translation.
+Reply with only JSON:
+{"dishes":[{"name":"as printed","translation":"English or empty","section":"menu section or empty","kcal_low":600,"kcal_high":850,"protein_g":35,"carbs_g":60,"fat_g":30,"tip":"short tip to make it lighter, or empty"}]}
+Macros are for the middle of the range. List at most 40 dishes, prioritising mains and starters over drinks. If this is not a menu, reply {"dishes":[]}.${text ? '\n\nMenu text:\n' + quoteText(text) : ''}`,
+
+  barcode: `The image shows a product barcode. Read the EAN or UPC number printed under the bars.
+Reply with only JSON: {"code":"8710400000000"}, or {"code":null} if you can't read every digit with confidence.`,
+
+  label: text => `${text ? 'Below is text copied from a food product’s packaging, including the nutrition table (Dutch: voedingswaarde, per 100 g or per 100 ml). It was copied from a photo, so it may contain recognition errors.' : 'The images show a food product’s packaging, including the nutrition table (Dutch: voedingswaarde, per 100 g or per 100 ml).'}
+Extract the values per 100 g (or per 100 ml for drinks). Use kcal, not kJ. Dutch terms: energie = energy, vetten = fat, koolhydraten = carbohydrates, eiwitten = protein.
+Reply with only JSON:
+{"name":"product name as on the pack","brand":"brand or empty","unit":"g or ml","kcal":0,"protein":0,"carbs":0,"fat":0,"portions":[{"label":"1 portion","grams":30}]}
+In "portions", include any serving size given (e.g. "1 slice", "1 biscuit", "per portie") and the whole pack if its weight is given. Use null for any value you can't find.${text ? '\n\nLabel text:\n' + quoteText(text) : ''}`,
+
+  food: q => `Estimate typical nutrition values for this food as eaten in the Netherlands: "${q.replace(/"/g, "'")}".
+Base the values on Dutch food composition data (NEVO), or on the typical Dutch supermarket product when the query names a product.
+Reply with only JSON: {"name":"clear name, English with the Dutch name in brackets if useful","unit":"g or ml","kcal":0,"protein":0,"carbs":0,"fat":0,"portions":[{"label":"1 piece","grams":0}]}
+Values are per 100 g (or 100 ml). Give 1 to 3 common portions.`,
+
+  garmin: (date, text) => `${text ? 'Below is text copied from Garmin Connect app screens.' : 'The images are screenshots from the Garmin Connect app.'} Extract the values for one day.
+The values belong to ${longDate(date)} unless a different date is clearly shown. Today is ${longDate(todayStr())}.
+Reply with only JSON with exactly these keys, using null for anything not present:
+- "date": the day as YYYY-MM-DD, or null if no date is shown
+${enabledMetrics().map(m => '- "' + m.id + '": ' + m.ai).join('\n')}
+Garmin shows "Total calories" (resting plus active), "Active calories" and "Resting calories". If only resting and active are shown, total = resting + active. Never use a calorie goal or a food-intake number as calories burned.${text ? '\n\nText:\n' + quoteText(text) : ''}`
+};
+
+/* ---------- image picking ---------- */
+function pickImages(opts) {
+  return new Promise(res => {
+    const inp = document.createElement('input');
+    inp.type = 'file'; inp.accept = 'image/*';
+    if (opts && opts.camera) inp.setAttribute('capture', 'environment');
+    if (opts && opts.multiple) inp.multiple = true;
+    inp.style.position = 'fixed'; inp.style.left = '-9999px';
+    document.body.appendChild(inp);
+    inp.addEventListener('change', () => { const f = Array.from(inp.files || []); inp.remove(); res(f); });
+    inp.addEventListener('cancel', () => { inp.remove(); res([]); });
+    inp.click();
+  });
+}
+async function downscale(file, max) {
+  const bmp = await createImageBitmap(file);
+  const k = Math.min(1, max / Math.max(bmp.width, bmp.height));
+  const c = document.createElement('canvas');
+  c.width = Math.max(1, Math.round(bmp.width * k)); c.height = Math.max(1, Math.round(bmp.height * k));
+  c.getContext('2d').drawImage(bmp, 0, 0, c.width, c.height);
+  if (bmp.close) bmp.close();
+  return c;
+}
+async function withThumbs(files) {
+  for (const f of files) { try { f.url = (await downscale(f, 240)).toDataURL('image/jpeg', 0.7); } catch (e) { f.url = ''; } }
+  return files;
+}
+function pickFiles(accept) {
+  return new Promise(res => {
+    const inp = document.createElement('input');
+    inp.type = 'file'; inp.accept = accept;
+    inp.style.position = 'fixed'; inp.style.left = '-9999px';
+    document.body.appendChild(inp);
+    inp.addEventListener('change', () => { const f = Array.from(inp.files || []); inp.remove(); res(f); });
+    inp.addEventListener('cancel', () => { inp.remove(); res([]); });
+    inp.click();
+  });
+}
+function thumbsHTML(files) {
+  if (!files || !files.length) return '';
+  return `<div class="thumbs">${files.map(f => f.url ? `<img class="thumb" src="${f.url}" alt="Selected photo">` : '<span class="thumb" role="img" aria-label="Selected photo"></span>').join('')}</div>`;
+}
+
+/* ---------- sheet + toast ---------- */
+function openSheet(title, body) {
+  const el = $('#sheet');
+  el.innerHTML = `<div class="sheet-head"><button class="icon-btn" data-act="closeSheet" aria-label="Close">${ICON.x}</button><h2 id="sheetTitle">${esc(title)}</h2></div><div class="sheet-body"><div class="sheet-inner" id="sheetInner">${body || ''}</div></div>`;
+  el.setAttribute('aria-labelledby', 'sheetTitle');
+  el.hidden = false; document.body.classList.add('locked');
+}
+function setSheetTitle(t) { const h = $('#sheetTitle'); if (h) h.textContent = t; }
+function setSheetBody(html) { const b = $('#sheetInner'); if (b) { b.innerHTML = html; const sb = $('.sheet-body'); if (sb) sb.scrollTop = 0; } }
+function closeSheet() {
+  abortAI(); stopScanner();
+  const el = $('#sheet'); el.hidden = true; el.innerHTML = '';
+  document.body.classList.remove('locked'); sheetState = null;
+  if (pendingRender) render();
+}
+let toastTimer = null, undoFn = null;
+function toast(msg, undo) {
+  const el = $('#toast');
+  el.innerHTML = `<span>${esc(msg)}</span>${undo ? '<button class="link" data-act="undo">Undo</button>' : ''}`;
+  el.hidden = false; undoFn = undo || null;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { el.hidden = true; undoFn = null; }, undo ? 6000 : 3200);
+}
+
+/* ---------- rendering ---------- */
+let pendingRender = false;
+function render() {
+  const active = document.activeElement;
+  const view = $('#view');
+  if (active && view.contains(active) && /INPUT|SELECT|TEXTAREA/.test(active.tagName)) { pendingRender = true; return; }
+  pendingRender = false;
+  const v = state.view;
+  view.innerHTML = v === 'today' ? viewToday() : v === 'add' ? viewAdd() : v === 'trends' ? viewTrends() : viewGarmin();
+  $('#tabs').innerHTML = [['today', 'Today', ICON.plate], ['add', 'Add', ICON.plus], ['trends', 'Trends', ICON.chart], ['garmin', 'Garmin', ICON.watch]]
+    .map(t => `<button class="tab${t[0] === 'add' ? ' add' : ''}" data-act="tab" data-arg="${t[0]}" aria-current="${state.view === t[0] ? 'page' : 'false'}">${t[2]}<span>${t[1]}</span></button>`).join('');
+}
+
+function mealSeg() {
+  return `<div class="seg" role="radiogroup" aria-label="Meal">${MEALS.map(m => `<button role="radio" data-act="setMeal" data-arg="${m[0]}" aria-checked="${state.addMeal === m[0]}">${m[1]}</button>`).join('')}</div>`;
+}
+
+function viewToday() {
+  const date = state.date, day = getDay(date), t = dayTotals(day), m = day.metrics || {};
+  const isToday = date === todayStr();
+  const burned = num(m.total);
+  const target = num(state.settings.targetDelta) ?? -500;
+  let hero;
+  if (burned != null) {
+    const delta = t.kcal - burned, budget = burned + target, left = budget - t.kcal;
+    const under = delta <= 0;
+    const max = Math.max(burned, t.kcal, budget, 1) * 1.04;
+    const pct = v => Math.max(0, Math.min(100, v / max * 100)).toFixed(1);
+    hero = `<section class="hero" aria-label="Energy balance">
+      <p class="hero-num ${under ? 'is-under' : 'is-over'}">${fmtSigned(delta)}<span class="unit">kcal</span></p>
+      <p class="hero-cap">${under ? fmt(-delta) + ' kcal under your burn' : fmt(delta) + ' kcal over your burn'}${isToday ? ' so far' : ''}</p>
+      <div class="balance">
+        <div class="bal-row"><span class="bal-label">Burned</span><div class="bal-track"><div class="bal-fill burn" style="width:${pct(burned)}%"></div></div><span class="bal-val">${fmt(burned)}</span></div>
+        <div class="bal-row"><span class="bal-label">Eaten</span><div class="bal-track"><div class="bal-fill eat" style="width:${pct(t.kcal)}%"></div><div class="bal-mark" style="left:${pct(budget)}%" title="Goal"></div></div><span class="bal-val">${fmt(t.kcal)}</span></div>
+      </div>
+      <p class="hero-sub">${left >= 0 ? fmt(left) + ' kcal left for your ' + fmtSigned(target) + ' goal' : fmt(-left) + ' kcal past your ' + fmtSigned(target) + ' goal'}${isToday ? '. Garmin’s burn keeps rising through the day.' : '.'}</p>
+    </section>`;
+  } else {
+    hero = `<section class="hero" aria-label="Energy balance">
+      <p class="hero-num">${fmt(t.kcal)}<span class="unit">kcal eaten</span></p>
+      <p class="hero-cap">Add this day’s Garmin burn to see your balance.</p>
+      <button class="btn btn-quiet" data-act="goGarmin">Add Garmin data</button>
+    </section>`;
+  }
+  const w = latestWeight(date);
+  const pTarget = w ? Math.round(w * (num(state.settings.proteinPerKg) || 1.6)) : null;
+  const kcalFrom = g => t.kcal > 0 ? Math.round(g / t.kcal * 100) : 0;
+  const macros = `<section class="macros" aria-label="Macros">
+    <div class="macro"><b>${fmt(t.p)} g</b><span>Protein${pTarget ? ' of ' + pTarget + ' g' : ''}</span>${pTarget ? `<div class="mbar"><i style="width:${Math.min(100, t.p / pTarget * 100).toFixed(0)}%"></i></div>` : ''}</div>
+    <div class="macro"><b>${fmt(t.c)} g</b><span>Carbs, ${kcalFrom(t.c * 4)}% kcal</span></div>
+    <div class="macro"><b>${fmt(t.f)} g</b><span>Fat, ${kcalFrom(t.f * 9)}% kcal</span></div>
+  </section>`;
+  const shown = enabledMetrics().filter(x => num(m[x.id]) != null);
+  const strip = `<button class="strip" data-act="goGarmin">
+    <div class="strip-head"><h2>From Garmin</h2><span>${shown.length ? 'Update' : 'Add'}</span></div>
+    ${shown.length ? `<div class="stats">${shown.map(x => `<span class="stat">${esc(x.short)} <b>${x.unit === 'kcal' ? fmt(m[x.id]) : fmt1(m[x.id])}</b> ${esc(x.unit)}</span>`).join('')}</div>` : '<p class="note">No Garmin data for this day yet.</p>'}
+  </button>`;
+  const meals = MEALS.map(([k, label]) => {
+    const es = (day.entries || []).filter(e => (e.meal || 'snack') === k);
+    const sum = es.reduce((s, e) => s + (+e.kcal || 0), 0);
+    return `<section class="meal"><div class="meal-head"><h2>${label}</h2><span class="kc">${es.length ? fmt(sum) + ' kcal' : ''}</span><button class="link" data-act="addTo" data-arg="${k}">Add</button></div>
+      ${es.length ? `<ul class="entries">${es.map(e => `<li><div><span class="e-name">${esc(e.name)}</span><span class="e-qty">${esc(e.qty || '')}</span></div><span class="e-kcal">${fmt(e.kcal)}</span><button class="icon-btn sm" data-act="removeEntry" data-arg="${esc(e.id)}" aria-label="Remove ${esc(e.name)}">${ICON.x}</button></li>`).join('')}</ul>` : ''}
+    </section>`;
+  }).join('');
+  return `<header class="top">
+      <button class="icon-btn" data-act="prevDay" aria-label="Previous day">${ICON.left}</button>
+      <button class="date-btn" data-act="todayDay" title="Jump to today">${esc(fmtDate(date))}</button>
+      <button class="icon-btn" data-act="nextDay" aria-label="Next day" ${isToday ? 'disabled' : ''}>${ICON.right}</button>
+      <span class="spacer"></span>
+      <button class="icon-btn" data-act="openSettings" aria-label="Settings">${ICON.sliders}</button>
+    </header>${getKey() ? '' : '<div class="notice setup"><p>Add your Claude API key to read photos, menus and Garmin screenshots.</p><button class="btn btn-quiet" data-act="openSettings">Open settings</button></div>'}${hero}${macros}${strip}${meals}`;
+}
+
+function recentFoods() {
+  const all = [];
+  Object.values(state.days).forEach(d => (d.entries || []).forEach(e => all.push(e)));
+  all.sort((a, b) => (b.ts || 0) - (a.ts || 0));
+  const seen = new Set(), out = [];
+  for (const e of all) {
+    const k = norm(e.name) + '|' + (e.qty || '');
+    if (seen.has(k)) continue;
+    seen.add(k); out.push(e);
+    if (out.length >= 12) break;
+  }
+  return out;
+}
+
+function viewAdd() {
+  recentCache = recentFoods();
+  const notToday = state.date !== todayStr();
+  return `<header class="top"><h1>Add food</h1><span class="spacer"></span>${notToday ? `<span class="muted small">Adding to ${esc(fmtDate(state.date))}</span>` : ''}</header>
+    ${mealSeg()}
+    <div class="methods">
+      <button class="method" data-act="openPhoto">${ICON.camera}<span class="m-title">Photo of food</span><span class="m-desc">Or describe it. Claude gives a range, you pick</span></button>
+      <button class="method" data-act="openBarcode">${ICON.barcode}<span class="m-title">Scan barcode</span><span class="m-desc">Packaged products, remembered after the first scan</span></button>
+      <button class="method" data-act="openSearch">${ICON.search}<span class="m-title">Search foods</span><span class="m-desc">Dutch staples and your products</span></button>
+      <button class="method" data-act="openMenu">${ICON.menu}<span class="m-title">Scan a menu</span><span class="m-desc">Calories for every dish</span></button>
+    </div>
+    <button class="btn btn-line btn-wide" data-act="openQuick">Enter calories myself</button>
+    <h2 class="section-title">Recent</h2>
+    ${recentCache.length ? `<ul class="list">${recentCache.map((e, i) => `<li><div><span class="e-name">${esc(e.name)}</span><span class="e-qty">${esc(e.qty || '')}</span></div><span class="e-kcal">${fmt(e.kcal)}</span><button class="plus" data-act="reAdd" data-arg="${i}" aria-label="Add ${esc(e.name)} again">${ICON.plus}</button></li>`).join('')}</ul>` : '<p class="muted">Foods you log show up here, so you can add them again with one tap.</p>'}`;
+}
+
+/* ---------- charts (inline SVG) ---------- */
+function niceTicks(min, max, count) {
+  if (!(max > min)) { min -= 1; max += 1; }
+  const step0 = (max - min) / (count || 4);
+  const mag = Math.pow(10, Math.floor(Math.log10(step0)));
+  const e = step0 / mag;
+  const step = (e >= 7.5 ? 10 : e >= 3.5 ? 5 : e >= 1.5 ? 2 : 1) * mag;
+  const lo = Math.floor(min / step) * step, hi = Math.ceil(max / step) * step;
+  const ticks = [];
+  for (let v = lo; v <= hi + step / 2; v += step) ticks.push(+v.toFixed(6));
+  return { lo, hi, ticks };
+}
+const emptyChart = msg => `<div class="chart-empty">${esc(msg || 'Not enough data yet.')}</div>`;
+function svgWrap(W, H, inner, label) { return `<div class="chart-wrap"><svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(label || 'Chart')}">${inner}</svg></div>`; }
+function yGrid(ticks, y, L, R, W, fmtY) {
+  return ticks.map(v => `<line class="grid" x1="${L}" x2="${W - R}" y1="${y(v).toFixed(1)}" y2="${y(v).toFixed(1)}"/><text class="ax" x="${L - 6}" y="${(y(v) + 3.5).toFixed(1)}" text-anchor="end">${fmtY(v)}</text>`).join('');
+}
+function axisDate(d, span) { return span > 180 ? parseYmd(d).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' }) : shortDate(d); }
+function xDateLabels(labels, x, H) {
+  const n = labels.length;
+  const idx = Array.from(new Set([0, Math.floor((n - 1) / 2), n - 1]));
+  return idx.map(i => `<text class="ax" x="${x(i).toFixed(1)}" y="${H - 5}" text-anchor="${i === 0 ? 'start' : i === n - 1 ? 'end' : 'middle'}">${esc(axisDate(labels[i], n))}</text>`).join('');
+}
+function lineChart(o) {
+  const W = 340, H = o.H || 190, L = 38, R = 6, T = 10, B = 22;
+  const vals = [];
+  o.series.forEach(s => s.values.forEach(v => { if (v != null) vals.push(v); }));
+  if (!vals.length) return emptyChart(o.empty);
+  (o.refs || []).forEach(r => vals.push(r.y));
+  const mn = Math.min(...vals), mx = Math.max(...vals);
+  const pad = (mx - mn) * 0.08 || Math.max(1, Math.abs(mx) * 0.03);
+  const { lo, hi, ticks } = niceTicks(mn - pad, mx + pad, 4);
+  const n = o.labels.length;
+  const x = i => L + (n <= 1 ? (W - L - R) / 2 : i * (W - L - R) / (n - 1));
+  const y = v => T + (hi - v) * (H - T - B) / (hi - lo);
+  let s = yGrid(ticks, y, L, R, W, o.fmtY || fmtAxis);
+  (o.refs || []).forEach(r => { s += `<line class="ref" x1="${L}" x2="${W - R}" y1="${y(r.y).toFixed(1)}" y2="${y(r.y).toFixed(1)}"/>`; });
+  o.series.forEach(se => {
+    let d = '', pen = false; const pts = [];
+    se.values.forEach((v, i) => {
+      if (v == null) { if (!se.bridge) pen = false; return; }
+      d += (pen ? 'L' : 'M') + x(i).toFixed(1) + ' ' + y(v).toFixed(1) + ' ';
+      pen = true; pts.push([x(i), y(v)]);
+    });
+    if (se.line !== false && d) s += `<path class="ln ${se.cls}" d="${d.trim()}"/>`;
+    if (se.dots !== false) pts.forEach(p => { s += `<circle class="${se.cls}${se.line === false ? '' : ' dt'}" cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="${se.r || (n > 45 ? 1.6 : 2.6)}"/>`; });
+  });
+  s += xDateLabels(o.labels, x, H);
+  return svgWrap(W, H, s, o.label);
+}
+function seriesPath(values, x, y, cls, opts) {
+  opts = opts || {};
+  let d = '', pen = false, dots = '';
+  values.forEach((v, i) => {
+    if (v == null) { if (!opts.bridge) pen = false; return; }
+    d += (pen ? 'L' : 'M') + x(i).toFixed(1) + ' ' + y(v).toFixed(1) + ' ';
+    pen = true;
+    if (opts.dots) dots += `<circle class="${cls}" cx="${x(i).toFixed(1)}" cy="${y(v).toFixed(1)}" r="${opts.r || 2.4}"/>`;
+  });
+  return (d ? `<path class="ln ${cls}" d="${d.trim()}"/>` : '') + dots;
+}
+function paddedTicks(vals) {
+  const mn = Math.min(...vals), mx = Math.max(...vals);
+  const pad = (mx - mn) * 0.08 || Math.max(1, Math.abs(mx) * 0.03);
+  return niceTicks(mn - pad, mx + pad, 4);
+}
+/* Calories: burned and eaten on the left axis, balance on its own right axis. */
+function dualLineChart(o) {
+  const W = 340, H = o.H || 240, T = 10, B = 22;
+  const lVals = [], rVals = [];
+  o.left.forEach(se => se.values.forEach(v => { if (v != null) lVals.push(v); }));
+  if (o.right) o.right.values.forEach(v => { if (v != null) rVals.push(v); });
+  if (!lVals.length && !rVals.length) return emptyChart(o.empty);
+  const L = lVals.length ? 38 : 8, R = rVals.length ? 40 : 8;
+  const n = o.labels.length, dots = n <= 31;
+  const x = i => L + (n <= 1 ? (W - L - R) / 2 : i * (W - L - R) / (n - 1));
+  let s = '', yl = null, yr = null;
+  if (lVals.length) {
+    const t = paddedTicks(lVals);
+    yl = v => T + (t.hi - v) * (H - T - B) / (t.hi - t.lo);
+    s += yGrid(t.ticks, yl, L, R, W, fmtAxis);
+  }
+  if (rVals.length) {
+    const t = paddedTicks(rVals.concat([0], (o.rightRefs || []).map(r => r.y)));
+    yr = v => T + (t.hi - v) * (H - T - B) / (t.hi - t.lo);
+    t.ticks.forEach(v => {
+      if (!yl) s += `<line class="grid" x1="${L}" x2="${W - R}" y1="${yr(v).toFixed(1)}" y2="${yr(v).toFixed(1)}"/>`;
+      s += `<text class="ax axr" x="${W - R + 5}" y="${(yr(v) + 3.5).toFixed(1)}" text-anchor="start">${fmtAxis(v)}</text>`;
+    });
+    s += `<line class="zero" x1="${L}" x2="${W - R}" y1="${yr(0).toFixed(1)}" y2="${yr(0).toFixed(1)}" style="stroke:var(--delta);opacity:.5"/>`;
+    (o.rightRefs || []).forEach(r => { s += `<line class="ref" x1="${L}" x2="${W - R}" y1="${yr(r.y).toFixed(1)}" y2="${yr(r.y).toFixed(1)}" style="stroke:var(--delta)"/>`; });
+  }
+  if (yl) o.left.forEach(se => { s += seriesPath(se.values, x, yl, se.cls, { dots }); });
+  if (yr) s += seriesPath(o.right.values, x, yr, o.right.cls, { dots });
+  s += xDateLabels(o.labels, x, H);
+  return svgWrap(W, H, s, o.label);
+}
+/* Weight: a line through each day's average; days with several weigh-ins get a bar from lowest to highest. */
+function weightChart(o) {
+  const W = 340, H = o.H || 210, L = 40, R = 8, T = 10, B = 22;
+  const vals = [];
+  o.days.forEach(d => { if (d) vals.push(d.min, d.max); });
+  if (!vals.length) return emptyChart(o.empty);
+  const t = paddedTicks(vals);
+  const n = o.labels.length;
+  const x = i => L + (n <= 1 ? (W - L - R) / 2 : i * (W - L - R) / (n - 1));
+  const y = v => T + (t.hi - v) * (H - T - B) / (t.hi - t.lo);
+  let s = yGrid(t.ticks, y, L, R, W, v => round(v, 1));
+  const bw = Math.max(3, Math.min(8, (W - L - R) / Math.max(1, n) * 0.6));
+  o.days.forEach((d, i) => {
+    if (!d || d.max - d.min < 0.001) return;
+    s += `<rect class="wrange" x="${(x(i) - bw / 2).toFixed(1)}" y="${y(d.max).toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(2, y(d.min) - y(d.max)).toFixed(1)}" rx="${(bw / 2).toFixed(1)}"><title>${esc(shortDate(o.labels[i]))}: ${fmt1(d.min)} to ${fmt1(d.max)} kg</title></rect>`;
+  });
+  s += seriesPath(o.days.map(d => d ? d.avg : null), x, y, 'wavg', { bridge: true, dots: true, r: n > 60 ? 1.8 : 2.8 });
+  s += xDateLabels(o.labels, x, H);
+  return svgWrap(W, H, s, o.label);
+}
+function scatterChart(o) {
+  const W = 340, H = o.H || 230, L = 42, R = 8, T = 10, B = 36;
+  const pts = o.pts;
+  if (pts.length < 2) return emptyChart(o.empty);
+  const xt = paddedTicks(pts.map(p => p.x)), yt = paddedTicks(pts.map(p => p.y));
+  const x = v => L + (v - xt.lo) * (W - L - R) / (xt.hi - xt.lo);
+  const y = v => T + (yt.hi - v) * (H - T - B) / (yt.hi - yt.lo);
+  let s = yGrid(yt.ticks, y, L, R, W, o.fmtY || fmtAxis);
+  xt.ticks.forEach(v => { s += `<text class="ax" x="${x(v).toFixed(1)}" y="${H - 20}" text-anchor="middle">${fmtAxis(v)}</text>`; });
+  if (xt.lo < 0 && xt.hi > 0) s += `<line class="zero" x1="${x(0).toFixed(1)}" x2="${x(0).toFixed(1)}" y1="${T}" y2="${H - B}"/>`;
+  pts.forEach(p => { s += `<circle class="pt" cx="${x(p.x).toFixed(1)}" cy="${y(p.y).toFixed(1)}" r="4"><title>${esc(p.title || '')}</title></circle>`; });
+  s += `<text class="ax" x="${((L + W - R) / 2).toFixed(1)}" y="${H - 3}" text-anchor="middle">${esc(o.xLabel)}</text>`;
+  return svgWrap(W, H, s, o.label);
+}
+
+/* ---------- trends ---------- */
+function rangeDates(n) { const end = todayStr(); const out = []; for (let i = n - 1; i >= 0; i--) out.push(addDays(end, -i)); return out; }
+const eatenOn = d => { const day = state.days[d]; return day && day.entries && day.entries.length ? dayTotals(day).kcal : null; };
+const metricOn = (d, id) => num(state.days[d] && state.days[d].metrics && state.days[d].metrics[id]);
+function trendSettings() {
+  const t = state.settings.trends || (state.settings.trends = {});
+  if (t.range == null) t.range = 30;
+  t.show = Object.assign({ burned: true, eaten: true, delta: true }, t.show || {});
+  return t;
+}
+function trendDates() {
+  const t = trendSettings(), today = todayStr();
+  let from, to = today;
+  if (t.range === 'all') { const keys = Object.keys(state.days).sort(); from = keys[0] && keys[0] < today ? keys[0] : addDays(today, -29); }
+  else if (t.range === 'custom') {
+    from = t.from || addDays(today, -29); to = t.to && t.to <= today ? t.to : today;
+    if (from > to) { const tmp = from; from = to; to = tmp; }
+  } else from = addDays(today, -((+t.range || 30) - 1));
+  const out = [];
+  for (let d = from; d <= to && out.length < 3700; d = addDays(d, 1)) out.push(d);
+  return out;
+}
+
+function viewTrends() {
+  const tr = trendSettings(), show = tr.show;
+  const dates = trendDates(), today = todayStr();
+  const eaten = dates.map(eatenOn);
+  const burned = dates.map(d => metricOn(d, 'total'));
+  const delta = dates.map((d, i) => d !== today && eaten[i] != null && burned[i] != null ? eaten[i] - burned[i] : null);
+  const wDays = dates.map(d => { const w = readingsOf(state.days[d], 'weight'); return w.length ? { min: Math.min(...w), max: Math.max(...w), avg: mean(w) } : null; });
+  const done = arr => arr.filter((v, i) => v != null && dates[i] !== today);
+  const avgE = done(eaten), avgB = done(burned), avgD = delta.filter(v => v != null);
+  const wFirst = wDays.find(Boolean), wLast = wDays.slice().reverse().find(Boolean);
+  const wChange = wFirst && wLast && wFirst !== wLast ? wLast.avg - wFirst.avg : null;
+  const target = num(state.settings.targetDelta) ?? -500;
+  const multiYear = dates[0].slice(0, 4) !== dates[dates.length - 1].slice(0, 4);
+  const capDate = d => multiYear ? parseYmd(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : shortDate(d);
+  const ranges = [[14, '14 d'], [30, '30 d'], [90, '90 d'], [365, '1 y'], ['all', 'All'], ['custom', 'Custom']];
+  const chip = (k, label, color) => `<button class="chip" data-act="toggleSeries" data-arg="${k}" aria-pressed="${show[k] !== false}"><i style="background:${color}"></i>${label}</button>`;
+
+  const left = [];
+  if (show.burned !== false) left.push({ values: burned, cls: 'burn' });
+  if (show.eaten !== false) left.push({ values: eaten, cls: 'eat' });
+  const right = show.delta !== false ? { values: delta, cls: 'delta' } : null;
+  const kcal = !left.length && !right ? emptyChart('Turn on at least one line.')
+    : dualLineChart({ labels: dates, left, right, rightRefs: [{ y: target }], label: 'Calories burned, eaten and daily balance', empty: 'Log food and add Garmin data to see this chart.' });
+
+  const pts = dates.map((d, i) => delta[i] != null && wDays[i] ? { x: delta[i], y: wDays[i].avg, title: shortDate(d) + ': ' + fmtSigned(delta[i]) + ' kcal, ' + fmt1(wDays[i].avg) + ' kg' } : null).filter(Boolean);
+
+  const extra = METRICS.filter(m => m.module && state.settings.modules[m.module]).map(m => {
+    const vals = dates.map(d => metricOn(d, m.id));
+    if (vals.every(v => v == null)) return '';
+    return `<section class="chart-block"><h2>${esc(m.title)}</h2><p class="small muted">${esc(m.unit)}</p>${lineChart({ labels: dates, series: [{ values: vals, cls: 'm', bridge: true }], H: 150, label: m.title })}</section>`;
+  }).join('');
+
+  return `<header class="top"><h1>Trends</h1></header>
+    <div class="seg small" role="radiogroup" aria-label="Period">${ranges.map(r => `<button role="radio" data-act="setRange" data-arg="${r[0]}" aria-checked="${String(tr.range) === String(r[0])}">${r[1]}</button>`).join('')}</div>
+    ${tr.range === 'custom' ? `<div class="grid2" style="margin-top:-8px"><label class="field"><span>From</span><input type="date" value="${dates[0]}" max="${today}" data-ch="trendFrom"></label><label class="field"><span>To</span><input type="date" value="${dates[dates.length - 1]}" max="${today}" data-ch="trendTo"></label></div>` : ''}
+    <dl class="statgrid">
+      <div><dt>Average eaten</dt><dd>${avgE.length ? fmt(mean(avgE)) : '–'}</dd></div>
+      <div><dt>Average burned</dt><dd>${avgB.length ? fmt(mean(avgB)) : '–'}</dd></div>
+      <div><dt>Average balance</dt><dd>${avgD.length ? fmtSigned(mean(avgD)) : '–'}</dd></div>
+      <div><dt>Weight change</dt><dd>${wChange != null ? (wChange > 0 ? '+' : wChange < 0 ? '−' : '') + round(Math.abs(wChange), 1) + ' kg' : '–'}</dd></div>
+    </dl>
+    <p class="cap">${esc(capDate(dates[0]))} to ${esc(capDate(dates[dates.length - 1]))}. Averages and the balance leave out today, since the day isn’t over yet.</p>
+
+    <section class="chart-block"><h2>Weight</h2>
+      <p class="small muted">kg, daily average. Days with several weigh-ins show a bar from lowest to highest.</p>
+      ${weightChart({ labels: dates, days: wDays, label: 'Weight per day', empty: 'Add weigh-ins from Garmin to see your weight.' })}
+    </section>
+
+    <section class="chart-block"><h2>Calories</h2>
+      <div class="chips">${chip('burned', 'Burned', 'var(--delft)')}${chip('eaten', 'Eaten', 'var(--caramel-2)')}${chip('delta', 'Balance', 'var(--delta)')}</div>
+      ${left.length || right ? `<div class="axis-caps">${left.length ? '<span>Burned and eaten, kcal</span>' : ''}${right ? `<span class="r">Balance, kcal (goal ${fmtSigned(target)})</span>` : ''}</div>` : ''}
+      ${kcal}
+    </section>
+
+    <section class="chart-block"><h2>Weight and balance</h2>
+      <p class="small muted">Weight, kg (daily average)</p>
+      ${scatterChart({ pts, xLabel: 'Daily balance, kcal', fmtY: v => round(v, 1), label: 'Weight against daily balance, one dot per day', empty: 'Needs a few days with a weigh-in plus both food and Garmin data.' })}
+      <p class="cap">Each dot is one day: its calorie balance against that day’s average weight.${pts.length ? ' ' + pts.length + ' days in this period.' : ''}</p>
+    </section>
+    ${extra}`;
+}
+
+/* ---------- Garmin ---------- */
+function metricInputs(prefix, vals) {
+  const ms = enabledMetrics();
+  return `<div class="grid2">${ms.map(m => {
+    const v = vals[m.id];
+    if (m.multi) {
+      const txt = Array.isArray(v) ? v.map(x => round(x, 2)).join(' ') : (v != null ? v : '');
+      return `<label class="field"><span>${esc(m.label)} (${esc(m.unit)})</span><input id="${prefix}-${m.id}" type="text" inputmode="decimal" autocomplete="off" placeholder="80.4" value="${esc(txt)}"></label>`;
+    }
+    return `<label class="field"><span>${esc(m.label)} (${esc(m.unit)})</span><input id="${prefix}-${m.id}" type="number" inputmode="decimal" step="${m.step}" min="0" value="${v != null ? esc(v) : ''}"></label>`;
+  }).join('')}</div>${ms.some(m => m.multi) ? '<p class="note">Several weigh-ins on one day? Type them all, separated by a space.</p>' : ''}`;
+}
+function readMetricInputs(prefix) {
+  const out = {};
+  enabledMetrics().forEach(m => { const el = $('#' + prefix + '-' + m.id); if (el) out[m.id] = m.multi ? parseMulti(el.value) : num(el.value); });
+  return out;
+}
+function saveMetrics(date, vals) {
+  const d = ensureDay(date);
+  Object.entries(vals).forEach(([k, v]) => {
+    const m = METRICS.find(x => x.id === k);
+    if (m && m.multi) {
+      const arr = parseMulti(v);
+      d.readings = d.readings || {};
+      if (arr.length) { d.readings[k] = arr; d.metrics[k] = round(mean(arr), 2); }
+      else { delete d.readings[k]; delete d.metrics[k]; }
+      return;
+    }
+    if (v == null) delete d.metrics[k]; else d.metrics[k] = v;
+  });
+  Store.saveDay(date);
+}
+function viewGarmin() {
+  const date = state.garminDate, m = getDay(date).metrics || {};
+  const rows = rangeDates(10).reverse().filter(d => state.days[d] && state.days[d].metrics && Object.keys(state.days[d].metrics).length);
+  const cols = enabledMetrics();
+  return `<header class="top"><h1>Garmin</h1></header>
+    <p class="lead">Garmin data comes in through screenshots of the Garmin Connect app, or you can type it in.</p>
+    <label class="field"><span>Day</span><input type="date" value="${date}" max="${todayStr()}" data-ch="gDate"></label>
+    <button class="btn btn-wide" data-act="importGarmin">Import from Garmin</button>
+    <p class="note">${photosOK() ? `In Garmin Connect, screenshot the day’s calories screen, plus weight${state.settings.modules.rhr ? ', resting heart rate' : ''}${state.settings.modules.hrv ? ', HRV' : ''}${state.settings.modules.sleep ? ', sleep' : ''} if you like. Pick them all at once; Claude reads the numbers and you check them before saving.` : 'Screenshots can’t be read in this view, but you can paste text copied from them, or type the numbers below.'} Today’s burn keeps rising until midnight, so update it in the evening or the next morning.</p>
+    <h2 class="section-title">Or type the numbers</h2>
+    ${metricInputs('gm', formVals(date))}
+    <button class="btn btn-quiet btn-wide" data-act="saveGarminForm">Save for ${esc(fmtDate(date))}</button>
+    <h2 class="section-title">Extra Garmin data</h2>
+    <p class="small muted">Each module adds a field here and a chart under Trends.</p>
+    ${METRICS.filter(x => x.module).map(x => `<label class="check"><input type="checkbox" data-ch="module" data-arg="${x.module}" ${state.settings.modules[x.module] ? 'checked' : ''}> ${esc(x.title)}</label>`).join('')}
+    <h2 class="section-title">Last 10 days</h2>
+    ${rows.length ? `<div class="tbl-wrap"><table class="days-table"><thead><tr><th>Day</th>${cols.map(c => `<th>${esc(c.short)}</th>`).join('')}</tr></thead><tbody>${rows.map(d => `<tr><td>${esc(fmtDate(d))}</td>${cols.map(c => { const v = metricOn(d, c.id); return `<td>${v == null ? '–' : c.unit === 'kcal' ? fmt(v) : fmt1(v)}</td>`; }).join('')}</tr>`).join('')}</tbody></table></div>` : '<p class="muted">Nothing imported yet.</p>'}`;
+}
+
+/* ---------- food flows ---------- */
+function productToEntry(prod, grams, qty) {
+  const f = grams / 100, p = prod.per100 || {};
+  return { id: rid(), name: prod.name, kcal: Math.round((p.kcal || 0) * f), p: round((p.protein || 0) * f, 1), c: round((p.carbs || 0) * f, 1), f: round((p.fat || 0) * f, 1), qty, grams: round(grams, 1), productId: prod.id, meal: state.addMeal, source: prod.source || 'product', ts: Date.now() };
+}
+function addEntries(entries) {
+  const d = ensureDay(state.date);
+  entries.forEach(e => d.entries.push(e));
+  Store.saveDay(state.date);
+}
+function afterAdd(count, what) {
+  closeSheet();
+  state.view = 'today'; render(); window.scrollTo(0, 0);
+  toast(count === 1 ? 'Added ' + what + ' to ' + mealName(state.addMeal) : 'Added ' + count + ' items to ' + mealName(state.addMeal));
+}
+
+/* photo + menu estimates */
+function normalizeItem(it) {
+  let lo = num(it.kcal_low), hi = num(it.kcal_high), mid = num(it.kcal_mid);
+  if (lo == null && hi == null && mid == null) return null;
+  if (lo == null) lo = mid != null ? mid : hi;
+  if (hi == null) hi = mid != null ? mid : lo;
+  if (lo > hi) { const t = lo; lo = hi; hi = t; }
+  if (mid == null || mid < lo || mid > hi) mid = (lo + hi) / 2;
+  lo = Math.max(0, Math.round(lo / 5) * 5); hi = Math.round(hi / 5) * 5;
+  if (hi <= lo) hi = lo + 10;
+  mid = Math.min(hi, Math.max(lo, Math.round(mid / 5) * 5));
+  const name = it.translation ? it.name + ' (' + it.translation + ')' : it.name;
+  return { name: String(name || 'Food').slice(0, 90), grams: num(it.grams), lo, hi, mid, chosen: mid, p: num(it.protein_g) || 0, c: num(it.carbs_g) || 0, f: num(it.fat_g) || 0, conf: String(it.confidence || ''), note: String(it.note || it.tip || '').slice(0, 180), on: true };
+}
+const itemFactor = it => it.mid > 0 ? it.chosen / it.mid : 1;
+const itemMacros = it => { const k = itemFactor(it); return 'Protein ' + fmt(it.p * k) + ' g, carbs ' + fmt(it.c * k) + ' g, fat ' + fmt(it.f * k) + ' g'; };
+function itemsTotal() { return sheetState.items.filter(i => i.on).reduce((s, i) => s + i.chosen, 0); }
+function itemsHTML() {
+  const s = sheetState;
+  return `${s.summary ? `<p class="lead">${esc(s.summary)}</p>` : ''}
+    <p class="small muted">Slide each item to where your portion sits in Claude’s range.</p>
+    ${s.items.map((it, i) => `<div class="est${it.on ? '' : ' off'}" id="est-${i}">
+      <div class="est-top"><input type="checkbox" data-ch="estOn" data-arg="${i}" ${it.on ? 'checked' : ''} aria-label="Include ${esc(it.name)}"><input class="name-in" data-in="estName" data-arg="${i}" value="${esc(it.name)}" aria-label="Name"><span class="est-kcal" id="k-${i}">${fmt(it.chosen)} kcal</span></div>
+      <input type="range" min="${it.lo}" max="${it.hi}" step="5" value="${it.chosen}" data-in="estRange" data-arg="${i}" aria-label="Calories for ${esc(it.name)}">
+      <div class="range-ends"><span>${fmt(it.lo)}</span><span>${it.grams ? 'about ' + fmt(it.grams * itemFactor(it)) + ' g' : ''}</span><span>${fmt(it.hi)}</span></div>
+      <p class="small muted" id="m-${i}">${itemMacros(it)}</p>
+      ${it.conf || it.note ? `<p class="small" style="margin-top:4px">${it.conf ? `<span class="tag conf">${esc(it.conf)} confidence</span> ` : ''}${esc(it.note)}</p>` : ''}
+    </div>`).join('')}
+    <div class="total-row"><span>Total</span><b id="estTotal">${fmt(itemsTotal())} kcal</b></div>
+    ${mealSeg()}
+    <button class="btn btn-wide" data-act="addEstimates">Add to <span class="meal-label">${mealName(state.addMeal)}</span></button>
+    ${s.fromMenu ? '<button class="btn btn-line btn-wide" data-act="backToMenu">Back to menu</button>' : ''}`;
+}
+function updateItem(i) {
+  const it = sheetState.items[i];
+  const k = $('#k-' + i), m = $('#m-' + i), t = $('#estTotal'), row = $('#est-' + i);
+  if (k) k.textContent = fmt(it.chosen) + ' kcal';
+  if (m) m.textContent = itemMacros(it);
+  if (t) t.textContent = fmt(itemsTotal()) + ' kcal';
+  if (row) row.classList.toggle('off', !it.on);
+  const ends = row && row.querySelector('.range-ends span:nth-child(2)');
+  if (ends && it.grams) ends.textContent = 'about ' + fmt(it.grams * itemFactor(it)) + ' g';
+}
+
+function photoPickHTML(msg) {
+  const block = aiBlocker();
+  if (block) return `<div class="notice">${esc(block)}</div>`;
+  const s = sheetState, photos = photosOK();
+  return `${msg ? `<div class="notice">${esc(msg)}</div>` : ''}
+    <p class="lead">${photos ? 'Take a photo of your plate, or describe what you’re eating.' : 'Describe what you’re eating.'} Claude estimates each item with a range, and you pick where your portion sits.</p>
+    ${photos ? `<div class="row2"><button class="btn" data-act="pickFood" data-arg="camera">Take photo</button><button class="btn btn-quiet" data-act="pickFood" data-arg="gallery">Choose photo</button></div>${thumbsHTML(s.files)}` : noPhotoNote('describe your meal in words instead.')}
+    <label class="field"><span>${photos ? 'Describe it, or add what the photo doesn’t show' : 'What are you eating?'}</span><textarea id="photoNote" rows="3" placeholder="For example: 2 slices of brown bread with young cheese and a cappuccino">${esc(s.note)}</textarea></label>
+    <button class="btn btn-wide" data-act="estimatePhoto">Estimate calories</button>`;
+}
+function menuPickHTML(msg) {
+  const block = aiBlocker();
+  if (block) return `<div class="notice">${esc(block)}</div>`;
+  const s = sheetState, photos = photosOK();
+  return `${msg ? `<div class="notice">${esc(msg)}</div>` : ''}
+    <p class="lead">Claude adds a calorie range to every dish on the menu, and you can log the one you order.</p>
+    ${photos ? `<div class="row2"><button class="btn" data-act="pickMenu" data-arg="camera">Take photo</button><button class="btn btn-quiet" data-act="pickMenu" data-arg="gallery">Choose photos</button></div>${thumbsHTML(s.files)}` : noPhotoNote('paste the menu text instead.')}
+    <label class="field"><span>${photos ? 'Or paste the menu text' : 'Menu text'}</span><textarea id="menuText" rows="4" placeholder="Paste the menu here">${esc(s.text || '')}</textarea></label>
+    <p class="note">${LENS_TIP}</p>
+    <button class="btn btn-wide" data-act="annotateMenu">Add calories to menu</button>
+    ${state.lastMenu ? '<button class="btn btn-line btn-wide" data-act="backToMenu">Show the last menu again</button>' : ''}`;
+}
+function menuResultsHTML() {
+  const dishes = state.lastMenu.dishes;
+  const left = budgetLeft(state.date);
+  let html = `<p class="lead">${dishes.length} dishes. Tap the one you order to log it.</p>${left != null ? `<p class="small muted">You have ${fmt(Math.max(0, left))} kcal left for your goal today.</p>` : ''}`;
+  let sec = null;
+  dishes.forEach((d, i) => {
+    if ((d.section || '') !== sec) { sec = d.section || ''; if (sec) html += `<h3 class="menu-sec">${esc(sec)}</h3>`; }
+    const fits = left != null && d.hi <= left;
+    html += `<button class="dish" data-act="menuDish" data-arg="${i}"><span class="d-name">${esc(d.name)}</span><span class="d-kcal">${fmt(d.lo)}–${fmt(d.hi)}</span><span class="d-sub">${fits ? '<span class="tag good">Fits your budget</span> ' : ''}${esc(d.note)}</span></button>`;
+  });
+  return html;
+}
+
+/* barcode + products */
+let zxingP = null;
+function loadZXing() {
+  if (window.ZXing) return Promise.resolve(window.ZXing);
+  if (!zxingP) zxingP = new Promise((res, rej) => {
+    const sc = document.createElement('script');
+    sc.src = 'https://cdn.jsdelivr.net/npm/@zxing/library@0.21.3/umd/index.min.js';
+    sc.onload = () => window.ZXing ? res(window.ZXing) : rej(new Error('ZXing missing'));
+    sc.onerror = () => { zxingP = null; rej(new Error('ZXing failed to load')); };
+    document.head.appendChild(sc);
+  });
+  return zxingP;
+}
+const EAN_FORMATS = ['ean_13', 'ean_8', 'upc_a', 'upc_e'];
+async function nativeFormats() {
+  if (!('BarcodeDetector' in window)) return [];
+  try { const sup = await window.BarcodeDetector.getSupportedFormats(); return EAN_FORMATS.filter(f => sup.includes(f)); } catch (e) { return []; }
+}
+function zxingHints(Z) {
+  const hints = new Map();
+  hints.set(Z.DecodeHintType.POSSIBLE_FORMATS, [Z.BarcodeFormat.EAN_13, Z.BarcodeFormat.EAN_8, Z.BarcodeFormat.UPC_A, Z.BarcodeFormat.UPC_E]);
+  hints.set(Z.DecodeHintType.TRY_HARDER, true);
+  return hints;
+}
+let scanStop = null;
+function stopScanner() { const f = scanStop; scanStop = null; if (f) { try { f(); } catch (e) { /* ignore */ } } }
+async function startScanner(video, onCode) {
+  stopScanner();
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) throw new Error('No camera access in this browser');
+  const formats = await nativeFormats();
+  if (formats.length) {
+    const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: { ideal: 'environment' }, width: { ideal: 1280 }, height: { ideal: 720 } }, audio: false });
+    if (!document.body.contains(video)) { stream.getTracks().forEach(t => t.stop()); return; }
+    let alive = true, timer = null;
+    scanStop = () => { alive = false; clearTimeout(timer); stream.getTracks().forEach(t => t.stop()); video.srcObject = null; };
+    video.srcObject = stream;
+    await video.play().catch(() => {});
+    const det = new window.BarcodeDetector({ formats });
+    const tick = async () => {
+      if (!alive) return;
+      try {
+        if (video.readyState >= 2) {
+          const r = await det.detect(video);
+          if (alive && r && r[0] && r[0].rawValue) { stopScanner(); onCode(r[0].rawValue); return; }
+        }
+      } catch (e) { /* keep scanning */ }
+      if (alive) timer = setTimeout(tick, 180);
+    };
+    tick();
+    return;
+  }
+  const Z = await loadZXing();
+  if (!document.body.contains(video)) return;
+  const reader = new Z.BrowserMultiFormatReader(zxingHints(Z), 250);
+  scanStop = () => reader.reset();
+  await reader.decodeFromConstraints({ video: { facingMode: { ideal: 'environment' } } }, video, result => {
+    if (result && scanStop) { const t = result.getText(); stopScanner(); onCode(t); }
+  });
+}
+async function beginScan() {
+  const v = $('#scanVideo'); if (!v) return;
+  try { await startScanner(v, code => lookupCode(code)); }
+  catch (e) {
+    const st = $('#scanStatus'); if (st) st.textContent = 'The live camera isn’t available here. Take a photo of the barcode or type the number.';
+    const box = $('.scan-box'); if (box) box.hidden = true;
+  }
+}
+async function decodeStill(file) {
+  const formats = await nativeFormats();
+  if (formats.length) {
+    try {
+      const det = new window.BarcodeDetector({ formats });
+      const res = await det.detect(await createImageBitmap(file));
+      if (res && res[0] && res[0].rawValue) return res[0].rawValue;
+    } catch (e) { /* try ZXing */ }
+  }
+  try {
+    const Z = await loadZXing();
+    const reader = new Z.BrowserMultiFormatReader(zxingHints(Z));
+    for (const size of [1400, 900, 2000]) {
+      try {
+        const r = await reader.decodeFromImageUrl((await downscale(file, size)).toDataURL('image/jpeg', 0.92));
+        const txt = r && (typeof r.getText === 'function' ? r.getText() : r.text);
+        if (txt) return txt;
+      } catch (e) { /* next size */ }
+    }
+  } catch (e) { /* no on-device reader */ }
+  return null;
+}
+async function readBarcode(file) {
+  const found = await decodeStill(file);
+  if (found) return found;
+  if (photosOK()) {
+    const r = await runAI('Reading the barcode…', PROMPTS.barcode, { images: [file], tier: 'quick' });
+    const code = String((r && r.code) || '').replace(/\D/g, '');
+    if (code.length >= 8) return code;
+  }
+  return null;
+}
+function barcodeHTML(msg) {
+  return `${msg ? `<div class="notice">${esc(msg)}</div>` : ''}
+    <div class="scan-box"><video id="scanVideo" playsinline muted autoplay></video><div class="scan-line" aria-hidden="true"></div></div>
+    <p class="small muted" id="scanStatus" style="margin-top:8px">Point the camera at the barcode. Products are looked up in Open Food Facts.</p>
+    <div class="row2"><button class="btn btn-quiet" data-act="pickBarcode" data-arg="camera">Take photo</button><button class="btn btn-line" data-act="pickBarcode" data-arg="gallery">Choose photo</button></div>
+    <label class="field"><span>Or type the number</span><input id="codeIn" inputmode="numeric" autocomplete="off" placeholder="8710400…"></label>
+    <button class="btn btn-line btn-wide" data-act="lookupTyped">Look up</button>`;
+}
+function showBarcode(msg) { setSheetTitle('Scan barcode'); setSheetBody(barcodeHTML(msg)); beginScan(); }
+
+/* Open Food Facts */
+const OFF_FIELDS = 'code,product_name,product_name_nl,product_name_en,brands,nutriments,serving_quantity,serving_size,product_quantity,product_quantity_unit,quantity';
+async function offFetch(url) {
+  const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 15000);
+  try { const r = await fetch(url, { signal: ctl.signal }); if (!r.ok) throw new Error('HTTP ' + r.status); return await r.json(); }
+  finally { clearTimeout(t); }
+}
+function productFromOFF(code, p) {
+  const n = (p && p.nutriments) || {};
+  let kcal = num(n['energy-kcal_100g']);
+  if (kcal == null) { const kj = num(n['energy-kj_100g']) ?? num(n['energy_100g']); if (kj != null) kcal = kj / 4.184; }
+  if (kcal == null) return null;
+  const unit = String(p.product_quantity_unit || '').toLowerCase() === 'ml' ? 'ml' : 'g';
+  const portions = [];
+  const sq = num(p.serving_quantity);
+  if (sq > 0) portions.push({ label: p.serving_size ? '1 serving, ' + String(p.serving_size).slice(0, 24) : '1 serving', grams: round(sq, 1) });
+  const pq = num(p.product_quantity);
+  if (pq > 0 && pq < 5000) portions.push({ label: 'whole pack', grams: round(pq, 1) });
+  const name = String(p.product_name_nl || p.product_name || p.product_name_en || '').trim() || 'Product ' + code;
+  return { id: code, barcode: code, name: name.slice(0, 90), brand: String(p.brands || '').split(',')[0].trim().slice(0, 60), unit, source: 'off',
+    per100: { kcal: round(kcal, 1), protein: round(num(n.proteins_100g) || 0, 1), carbs: round(num(n.carbohydrates_100g) || 0, 1), fat: round(num(n.fat_100g) || 0, 1) },
+    portions, createdAt: Date.now() };
+}
+async function fetchOFF(code) {
+  try {
+    const j = await offFetch('https://world.openfoodfacts.org/api/v2/product/' + encodeURIComponent(code) + '.json?fields=' + OFF_FIELDS);
+    return j && j.status === 1 && j.product ? productFromOFF(code, j.product) : null;
+  } catch (e) { return null; }
+}
+async function searchOFF(q) {
+  const j = await offFetch('https://world.openfoodfacts.org/cgi/search.pl?search_terms=' + encodeURIComponent(q) + '&search_simple=1&action=process&json=1&page_size=20&tagtype_0=countries&tag_contains_0=contains&tag_0=netherlands&fields=' + OFF_FIELDS);
+  return ((j && j.products) || []).map(p => p && p.code ? productFromOFF(String(p.code), p) : null).filter(Boolean);
+}
+
+async function lookupCode(code) {
+  code = String(code || '').replace(/\D/g, '');
+  if (code.length < 6) { showBarcode('Enter the full barcode number.'); return; }
+  stopScanner();
+  const known = state.products[code];
+  if (known) { openPortion(known); return; }
+  const token = {}; sheetState = { type: 'lookup', token };
+  setSheetBody(`<div class="thinking" role="status"><div class="pulse" aria-hidden="true"></div><p><b>Looking up ${esc(code)}…</b></p></div>`);
+  const prod = await fetchOFF(code);
+  if (!sheetState || sheetState.token !== token) return;
+  if (prod) { Store.saveProduct(prod); openPortion(prod); return; }
+  sheetState = { type: 'newprod', code, files: [] };
+  setSheetTitle('New product');
+  setSheetBody(newProdHTML('This product isn’t in Open Food Facts yet, or has no nutrition values there.'));
+}
+function newProdHTML(msg) {
+  const s = sheetState, block = aiBlocker(), photos = photosOK();
+  return `${msg ? `<div class="notice">${esc(msg)}</div>` : ''}
+    <p class="lead">Barcode ${esc(s.code)} is new. ${photos ? 'Photograph the nutrition table (voedingswaarde) on the pack, and the front if the name isn’t near the table.' : 'Paste the text of the nutrition table (voedingswaarde), or type the values yourself.'}</p>
+    ${block ? `<div class="notice">${esc(block)}</div>` : `${photos ? `<div class="row2"><button class="btn" data-act="pickLabel" data-arg="camera">Take photo</button><button class="btn btn-quiet" data-act="pickLabel" data-arg="gallery">Choose photos</button></div>${thumbsHTML(s.files)}` : ''}
+    <label class="field"><span>${photos ? 'Or paste the label text' : 'Label text'}</span><textarea id="labelText" rows="4" placeholder="Energie 250 kcal, vetten 9 g…">${esc(s.text || '')}</textarea></label>
+    <p class="note">${LENS_TIP}</p>
+    <button class="btn btn-wide" data-act="readLabel">Read label</button>`}
+    <button class="btn btn-line btn-wide" data-act="manualProduct">Type the values myself</button>`;
+}
+function garminPickHTML(msg) {
+  const s = sheetState, photos = photosOK();
+  return `${msg ? `<div class="notice">${esc(msg)}</div>` : ''}
+    <p class="lead">For ${esc(fmtDate(s.date))}. ${photos ? 'Choose screenshots of Garmin Connect’s calories screen, plus weight, heart rate or HRV if you like.' : 'Paste text copied from your Garmin Connect screenshots.'}</p>
+    ${photos ? '<button class="btn btn-wide" data-act="pickGarmin">Choose screenshots</button>' : noPhotoNote('paste the text instead, or type the numbers on the Garmin tab.')}
+    <label class="field"><span>${photos ? 'Or paste text from Garmin' : 'Text from Garmin'}</span><textarea id="garminText" rows="4">${esc(s.text || '')}</textarea></label>
+    <p class="note">${LENS_TIP}</p>
+    <button class="btn ${photos ? 'btn-quiet ' : ''}btn-wide" data-act="readGarmin">Read text</button>`;
+}
+function productFromAI(r, base) {
+  r = r || {};
+  const portions = (Array.isArray(r.portions) ? r.portions : []).map(p => ({ label: String((p && p.label) || '').slice(0, 40), grams: num(p && p.grams) })).filter(p => p.label && p.grams > 0).slice(0, 4);
+  return Object.assign({}, base, {
+    name: String(r.name || '').slice(0, 90), brand: String(r.brand || '').slice(0, 60), unit: r.unit === 'ml' ? 'ml' : 'g',
+    per100: { kcal: num(r.kcal), protein: num(r.protein), carbs: num(r.carbs), fat: num(r.fat) }, portions, createdAt: Date.now()
+  });
+}
+function productFormHTML(prod, err) {
+  const p = prod.per100 || {}, first = (prod.portions || [])[0] || {};
+  return `<p class="lead">${prod.source === 'claude' ? 'Claude’s estimate. Check it, then save.' : 'Check the values against the pack, then save.'}</p>
+    ${err ? `<p class="err">${esc(err)}</p>` : ''}
+    <label class="field"><span>Name</span><input id="pf-name" value="${esc(prod.name)}"></label>
+    <label class="field"><span>Brand (optional)</span><input id="pf-brand" value="${esc(prod.brand || '')}"></label>
+    <label class="field"><span>Values are per 100</span><select id="pf-unit"><option value="g" ${prod.unit !== 'ml' ? 'selected' : ''}>g</option><option value="ml" ${prod.unit === 'ml' ? 'selected' : ''}>ml</option></select></label>
+    <div class="grid2">
+      <label class="field"><span>Energy (kcal)</span><input id="pf-kcal" type="number" inputmode="decimal" step="any" value="${p.kcal != null ? p.kcal : ''}"></label>
+      <label class="field"><span>Protein (g)</span><input id="pf-protein" type="number" inputmode="decimal" step="any" value="${p.protein != null ? p.protein : ''}"></label>
+      <label class="field"><span>Carbs (g)</span><input id="pf-carbs" type="number" inputmode="decimal" step="any" value="${p.carbs != null ? p.carbs : ''}"></label>
+      <label class="field"><span>Fat (g)</span><input id="pf-fat" type="number" inputmode="decimal" step="any" value="${p.fat != null ? p.fat : ''}"></label>
+      <label class="field"><span>Portion name (optional)</span><input id="pf-plabel" value="${esc(first.label || '')}" placeholder="1 slice"></label>
+      <label class="field"><span>Portion size (g or ml)</span><input id="pf-pgrams" type="number" inputmode="decimal" step="any" value="${first.grams != null ? first.grams : ''}"></label>
+    </div>
+    <button class="btn btn-wide" data-act="saveProdForm">Save product</button>`;
+}
+
+/* search */
+function allFoods() { return Object.values(state.products).concat(BUILTIN); }
+function findFood(id) { return state.products[id] || BUILTIN_MAP[id] || null; }
+function searchResultsHTML(q) {
+  const toks = norm(q).split(/\s+/).filter(Boolean);
+  let list;
+  if (!toks.length) {
+    list = Object.values(state.products).sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0)).slice(0, 20);
+    if (!list.length) return '<p class="muted small" style="margin-top:14px">Type to search Dutch staples, your products and Open Food Facts.</p>';
+  } else {
+    list = allFoods().filter(f => { const h = norm(f.name + ' ' + (f.brand || '')); return toks.every(t => h.includes(t)); })
+      .sort((a, b) => (a.source === 'builtin') - (b.source === 'builtin') || norm(a.name).indexOf(toks[0]) - norm(b.name).indexOf(toks[0])).slice(0, 30);
+  }
+  const row = (f, act, arg) => `<button class="food-row" data-act="${act}" data-arg="${esc(arg)}"><b>${esc(f.name)}</b><span>${f.brand ? esc(f.brand) + ', ' : ''}${fmt(f.per100 && f.per100.kcal)} kcal per 100 ${esc(f.unit || 'g')}${f.source === 'builtin' ? ', typical values' : ''}</span></button>`;
+  const rows = list.map(f => row(f, 'chooseFood', f.id)).join('');
+  let off = '';
+  if (toks.length) {
+    const s = sheetState || {};
+    if (s.offQ === q.trim() && s.offResults) {
+      off = `<h3 class="section-title">Open Food Facts</h3>${s.offResults.length ? s.offResults.map((f, i) => row(f, 'chooseOFF', i)).join('') : '<p class="muted">No supermarket products found.</p>'}`;
+    } else if (s.offQ === q.trim() && s.offBusy) {
+      off = '<p class="muted" style="margin-top:14px">Searching Open Food Facts…</p>';
+    } else {
+      off = `<button class="btn btn-quiet btn-wide" data-act="searchOFF">Search supermarket products</button>`;
+    }
+    off += `<button class="btn btn-line btn-wide" data-act="estimateFood">Ask Claude about “${esc(q.trim())}”</button>`;
+  }
+  return (rows || (toks.length ? '<p class="muted" style="margin-top:14px">No match in your list.</p>' : '')) + `<div class="off-area">${off}</div>`;
+}
+
+/* portion */
+function openPortion(prod) {
+  const ps = prod.portions || [];
+  sheetState = { type: 'portion', prod, unit: ps.length ? 'p:0' : 'g', amount: ps.length ? 1 : 100 };
+  setSheetTitle(prod.name || 'Product');
+  setSheetBody(portionHTML());
+}
+function portionGrams() {
+  const s = sheetState, a = num(s.amount) || 0;
+  if (s.unit === 'g') return a;
+  const p = (s.prod.portions || [])[+s.unit.slice(2)];
+  return p ? p.grams * a : a;
+}
+function portionCalcHTML() {
+  const s = sheetState, g = portionGrams(), f = g / 100, p = s.prod.per100 || {};
+  return `<b>${fmt((p.kcal || 0) * f)}</b> kcal<p class="small muted">${fmt1(g)} ${esc(s.prod.unit || 'g')}. Protein ${fmt1((p.protein || 0) * f)} g, carbs ${fmt1((p.carbs || 0) * f)} g, fat ${fmt1((p.fat || 0) * f)} g</p>`;
+}
+function portionHTML() {
+  const s = sheetState, prod = s.prod, p = prod.per100 || {}, u = prod.unit || 'g';
+  const opts = (prod.portions || []).map((x, i) => `<option value="p:${i}" ${s.unit === 'p:' + i ? 'selected' : ''}>${esc(x.label)} (${fmt1(x.grams)} ${u})</option>`).join('') + `<option value="g" ${s.unit === 'g' ? 'selected' : ''}>${u}</option>`;
+  return `<div class="prod-head">${prod.brand ? `<p class="muted">${esc(prod.brand)}</p>` : ''}<p class="small muted">Per 100 ${u}: ${fmt(p.kcal)} kcal, protein ${fmt1(p.protein)} g, carbs ${fmt1(p.carbs)} g, fat ${fmt1(p.fat)} g${prod.source === 'builtin' ? '. Typical values.' : ''}</p></div>
+    <div class="amount-row"><label class="field"><span>Amount</span><input id="pAmount" type="number" inputmode="decimal" step="any" min="0" value="${s.amount}" data-in="amount"></label><label class="field"><span>Unit</span><select data-ch="unit">${opts}</select></label></div>
+    <div class="calc" id="pCalc">${portionCalcHTML()}</div>
+    <div style="margin-top:16px">${mealSeg()}</div>
+    <button class="btn btn-wide" data-act="addPortion">Add to <span class="meal-label">${mealName(state.addMeal)}</span></button>`;
+}
+
+/* ---------- actions ---------- */
+const ACT = {
+  tab: a => { state.view = a; if (a === 'garmin') state.garminDate = state.date; render(); window.scrollTo(0, 0); },
+  prevDay: () => { state.date = addDays(state.date, -1); render(); },
+  nextDay: () => { if (state.date < todayStr()) { state.date = addDays(state.date, 1); render(); } },
+  todayDay: () => { state.date = todayStr(); render(); },
+  goGarmin: () => { state.garminDate = state.date; state.view = 'garmin'; render(); window.scrollTo(0, 0); },
+  addTo: a => { state.addMeal = a; state.view = 'add'; render(); window.scrollTo(0, 0); },
+  setMeal: a => {
+    state.addMeal = a;
+    document.querySelectorAll('[data-act="setMeal"]').forEach(b => b.setAttribute('aria-checked', String(b.dataset.arg === a)));
+    document.querySelectorAll('.meal-label').forEach(el => { el.textContent = mealName(a); });
+  },
+  setRange: a => {
+    const t = trendSettings();
+    if (a === 'custom' && t.range !== 'custom') { const cur = trendDates(); t.from = cur[0]; t.to = cur[cur.length - 1]; }
+    t.range = a === 'all' || a === 'custom' ? a : +a;
+    saveCache(); render();
+  },
+  toggleSeries: a => { const t = trendSettings(); t.show[a] = t.show[a] === false; saveCache(); render(); },
+  removeEntry: id => {
+    const d = state.days[state.date]; if (!d) return;
+    const i = d.entries.findIndex(e => e.id === id); if (i < 0) return;
+    const [removed] = d.entries.splice(i, 1);
+    Store.saveDay(state.date);
+    const date = state.date;
+    toast('Removed ' + removed.name, () => { const dd = ensureDay(date); dd.entries.splice(Math.min(i, dd.entries.length), 0, removed); Store.saveDay(date); });
+  },
+  undo: () => { const f = undoFn; undoFn = null; $('#toast').hidden = true; if (f) f(); },
+  reAdd: i => {
+    const e = recentCache[+i]; if (!e) return;
+    const copy = Object.assign({}, e, { id: rid(), meal: state.addMeal, ts: Date.now() });
+    addEntries([copy]); toast('Added ' + e.name + ' to ' + mealName(state.addMeal));
+  },
+  closeSheet: () => closeSheet(),
+  stopAI: () => abortAI(),
+
+  /* photo */
+  openPhoto: () => { sheetState = { type: 'photo', files: [], note: '' }; openSheet(photosOK() ? 'Photo of food' : 'Describe your food', photoPickHTML()); },
+  pickFood: async a => {
+    const note = $('#photoNote'); if (note && sheetState) sheetState.note = note.value;
+    const files = await pickImages({ camera: a === 'camera', multiple: a !== 'camera' });
+    if (!files.length || !sheetState) return;
+    sheetState.files = (await withThumbs(files)).slice(0, Math.max(1, IMG_MAX));
+    setSheetBody(photoPickHTML());
+  },
+  estimatePhoto: async () => {
+    const s = sheetState; if (!s) return;
+    const note = $('#photoNote'); if (note) s.note = note.value.trim();
+    const hasImage = s.files.length > 0 && photosOK();
+    if (!hasImage && !s.note) { setSheetBody(photoPickHTML(photosOK() ? 'Take a photo or describe your food first.' : 'Describe your food first.')); return; }
+    try {
+      const r = await runAI(hasImage ? 'Looking at your food…' : 'Estimating your food…', PROMPTS.estimate(s.note, mealName(state.addMeal), hasImage), hasImage ? { images: s.files } : {});
+      const items = ((r && r.items) || []).map(normalizeItem).filter(Boolean);
+      if (!items.length) { setSheetBody(photoPickHTML(hasImage ? 'No food found in this photo. Try a closer, well-lit shot.' : 'Claude couldn’t find food in that description. Try naming the items.')); return; }
+      s.items = items; s.summary = (r && r.summary) || ''; s.fromMenu = false;
+      setSheetBody(itemsHTML());
+    } catch (e) { showAIError(e, photoPickHTML, 'estimatePhoto'); }
+  },
+  addEstimates: () => {
+    const s = sheetState; if (!s || !s.items) return;
+    const chosen = s.items.filter(i => i.on);
+    if (!chosen.length) { toast('Tick at least one item.'); return; }
+    const entries = chosen.map(it => {
+      const k = itemFactor(it);
+      return { id: rid(), name: it.name, kcal: Math.round(it.chosen), p: round(it.p * k, 1), c: round(it.c * k, 1), f: round(it.f * k, 1), qty: (it.grams ? 'about ' + fmt(it.grams * k) + ' g, ' : '') + 'estimated ' + fmt(it.lo) + '–' + fmt(it.hi) + ' kcal', meal: state.addMeal, source: s.fromMenu ? 'menu' : 'photo', ts: Date.now() };
+    });
+    addEntries(entries); afterAdd(entries.length, entries[0].name);
+  },
+
+  /* menu */
+  openMenu: () => { sheetState = { type: 'menu', files: [] }; openSheet('Scan a menu', menuPickHTML()); },
+  pickMenu: async a => {
+    const t = $('#menuText'); if (t && sheetState) sheetState.text = t.value;
+    const files = await pickImages({ camera: a === 'camera', multiple: a !== 'camera' });
+    if (!files.length || !sheetState) return;
+    const merged = (sheetState.files || []).concat(await withThumbs(files));
+    sheetState.files = merged.slice(-Math.max(1, IMG_MAX));
+    setSheetBody(menuPickHTML());
+  },
+  annotateMenu: async () => {
+    const s = sheetState; if (!s) return;
+    const t = $('#menuText'); if (t) s.text = t.value.trim();
+    const hasImage = (s.files || []).length > 0 && photosOK();
+    if (!hasImage && !s.text) { setSheetBody(menuPickHTML(photosOK() ? 'Add a photo or paste the menu text first.' : 'Paste the menu text first.')); return; }
+    try {
+      const r = await runAI('Reading the menu…', PROMPTS.menu(hasImage ? '' : s.text), hasImage ? { images: s.files } : {});
+      const dishes = ((r && r.dishes) || []).map(d => { const it = normalizeItem(d); if (it) it.section = String(d.section || ''); return it; }).filter(Boolean);
+      if (!dishes.length) { setSheetBody(menuPickHTML('No dishes found. Make sure the whole menu is in the photo or text.')); return; }
+      state.lastMenu = { dishes, ts: Date.now() };
+      setSheetTitle('Menu'); setSheetBody(menuResultsHTML());
+    } catch (e) { showAIError(e, menuPickHTML, 'annotateMenu'); }
+  },
+  backToMenu: () => { if (!state.lastMenu) return; sheetState = { type: 'menu', files: [] }; setSheetTitle('Menu'); setSheetBody(menuResultsHTML()); },
+  menuDish: i => {
+    const d = state.lastMenu && state.lastMenu.dishes[+i]; if (!d) return;
+    sheetState = { type: 'dish', items: [Object.assign({}, d, { chosen: d.mid, on: true })], fromMenu: true, summary: '' };
+    setSheetTitle('Log a dish'); setSheetBody(itemsHTML());
+  },
+
+  /* barcode */
+  openBarcode: () => { sheetState = { type: 'barcode' }; openSheet('Scan barcode', barcodeHTML()); beginScan(); },
+  pickBarcode: async a => {
+    stopScanner();
+    const files = await pickImages({ camera: a === 'camera' });
+    if (!sheetState) return;
+    if (!files.length) { showBarcode(); return; }
+    setSheetBody(`<div class="thinking" role="status"><div class="pulse" aria-hidden="true"></div><p><b>Reading the barcode…</b></p></div>`);
+    let code = null;
+    try { code = await readBarcode(files[0]); }
+    catch (e) { if (e && e.code !== 'cancelled') { showBarcode(aiErrorText(e)); return; } }
+    if (code) lookupCode(code);
+    else showBarcode('Couldn’t read that barcode. Try again closer and in focus, or type the number.');
+  },
+  lookupTyped: () => { const v = $('#codeIn'); lookupCode(v ? v.value : ''); },
+  pickLabel: async a => {
+    const t = $('#labelText'); if (t && sheetState) sheetState.text = t.value;
+    const files = await pickImages({ camera: a === 'camera', multiple: a !== 'camera' });
+    if (!files.length || !sheetState) return;
+    sheetState.files = (sheetState.files || []).concat(await withThumbs(files)).slice(-Math.max(1, IMG_MAX));
+    setSheetBody(newProdHTML());
+  },
+  readLabel: async () => {
+    const s = sheetState; if (!s) return;
+    const t = $('#labelText'); if (t) s.text = t.value.trim();
+    const hasImage = (s.files || []).length > 0 && photosOK();
+    if (!hasImage && !s.text) { setSheetBody(newProdHTML(photosOK() ? 'Add a photo or paste the label text first.' : 'Paste the label text first.')); return; }
+    try {
+      const r = await runAI('Reading the label…', PROMPTS.label(hasImage ? '' : s.text), hasImage ? { images: s.files } : {});
+      const prod = productFromAI(r, { id: s.code, barcode: s.code, source: 'label' });
+      sheetState = { type: 'prodform', prod };
+      setSheetTitle('Check product'); setSheetBody(productFormHTML(prod));
+    } catch (e) { showAIError(e, newProdHTML, 'readLabel'); }
+  },
+  manualProduct: () => {
+    const code = sheetState && sheetState.code;
+    const prod = { id: code || 'c-' + rid(), barcode: code || '', name: '', brand: '', unit: 'g', source: 'manual', per100: {}, portions: [], createdAt: Date.now() };
+    sheetState = { type: 'prodform', prod };
+    setSheetTitle('New product'); setSheetBody(productFormHTML(prod));
+  },
+  saveProdForm: () => {
+    const s = sheetState; if (!s || !s.prod) return;
+    const v = id => { const el = $('#pf-' + id); return el ? el.value : ''; };
+    const prod = Object.assign({}, s.prod, {
+      name: v('name').trim(), brand: v('brand').trim(), unit: v('unit') === 'ml' ? 'ml' : 'g',
+      per100: { kcal: num(v('kcal')), protein: num(v('protein')) || 0, carbs: num(v('carbs')) || 0, fat: num(v('fat')) || 0 }
+    });
+    const pl = v('plabel').trim(), pg = num(v('pgrams'));
+    const rest = (s.prod.portions || []).slice(1);
+    prod.portions = (pl && pg > 0 ? [{ label: pl, grams: pg }] : []).concat(rest);
+    if (!prod.name) { setSheetBody(productFormHTML(prod, 'Give the product a name.')); return; }
+    if (prod.per100.kcal == null) { setSheetBody(productFormHTML(prod, 'Enter the energy in kcal per 100.')); return; }
+    Store.saveProduct(prod);
+    openPortion(prod);
+  },
+
+  /* search */
+  openSearch: () => {
+    sheetState = { type: 'search', q: '' };
+    openSheet('Search foods', `<label class="field" style="margin-top:0"><span>Food or product</span><input id="q" type="search" autocomplete="off" placeholder="For example: kroket, kwark, AH volkoren" data-in="searchQ"></label><div id="searchResults">${searchResultsHTML('')}</div>`);
+    setTimeout(() => { const q = $('#q'); if (q) q.focus(); }, 60);
+  },
+  chooseFood: id => { const f = findFood(id); if (f) openPortion(f); },
+  searchOFF: async () => {
+    const s = sheetState; if (!s) return;
+    const q = String(s.q || '').trim(); if (!q) return;
+    s.offQ = q; s.offBusy = true; s.offResults = null;
+    const area = $('#searchResults'); if (area) area.innerHTML = searchResultsHTML(q);
+    let results = [];
+    try { results = await searchOFF(q); } catch (e) { toast('Open Food Facts didn’t respond. Try again in a minute.'); }
+    if (sheetState !== s) return;
+    s.offBusy = false; s.offResults = results;
+    const area2 = $('#searchResults'); if (area2 && String(s.q || '').trim() === q) area2.innerHTML = searchResultsHTML(q);
+  },
+  chooseOFF: i => {
+    const f = sheetState && sheetState.offResults && sheetState.offResults[+i]; if (!f) return;
+    Store.saveProduct(f); openPortion(f);
+  },
+  estimateFood: async () => {
+    const q = (sheetState && sheetState.q || '').trim(); if (!q) return;
+    const block = aiBlocker(); if (block) { toast(block); return; }
+    try {
+      const r = await runAI('Asking Claude…', PROMPTS.food(q), { tier: 'default' });
+      const prod = productFromAI(r, { id: 'c-' + rid(), barcode: '', source: 'claude' });
+      if (!prod.name) prod.name = q;
+      sheetState = { type: 'prodform', prod };
+      setSheetTitle('Check food'); setSheetBody(productFormHTML(prod));
+    } catch (e) { setSheetBody(errorHTML(e, null)); }
+  },
+  addPortion: () => {
+    const s = sheetState; if (!s || !s.prod) return;
+    const g = portionGrams();
+    if (!(g > 0)) { toast('Enter an amount.'); return; }
+    const u = s.prod.unit || 'g';
+    let qty;
+    if (s.unit === 'g') qty = fmt1(g) + ' ' + u;
+    else { const p = s.prod.portions[+s.unit.slice(2)]; qty = fmt1(num(s.amount)) + ' × ' + p.label + ' (' + fmt1(g) + ' ' + u + ')'; }
+    const e = productToEntry(s.prod, g, qty);
+    addEntries([e]); afterAdd(1, e.name);
+  },
+
+  /* quick */
+  openQuick: () => {
+    sheetState = { type: 'quick' };
+    openSheet('Enter calories', `<label class="field" style="margin-top:0"><span>What did you eat?</span><input id="qk-name" placeholder="For example: pizza slice at work"></label>
+      <div class="grid2"><label class="field"><span>Energy (kcal)</span><input id="qk-kcal" type="number" inputmode="decimal"></label><label class="field"><span>Protein (g, optional)</span><input id="qk-p" type="number" inputmode="decimal"></label><label class="field"><span>Carbs (g, optional)</span><input id="qk-c" type="number" inputmode="decimal"></label><label class="field"><span>Fat (g, optional)</span><input id="qk-f" type="number" inputmode="decimal"></label></div>
+      <p class="err" id="qk-err" hidden></p>
+      <div style="margin-top:16px">${mealSeg()}</div>
+      <button class="btn btn-wide" data-act="addQuick">Add to <span class="meal-label">${mealName(state.addMeal)}</span></button>`);
+  },
+  addQuick: () => {
+    const name = ($('#qk-name').value || '').trim() || 'Quick entry', kcal = num($('#qk-kcal').value);
+    if (kcal == null || kcal < 0) { const er = $('#qk-err'); er.textContent = 'Enter the calories.'; er.hidden = false; return; }
+    const e = { id: rid(), name, kcal: Math.round(kcal), p: num($('#qk-p').value) || 0, c: num($('#qk-c').value) || 0, f: num($('#qk-f').value) || 0, qty: 'entered by hand', meal: state.addMeal, source: 'manual', ts: Date.now() };
+    addEntries([e]); afterAdd(1, name);
+  },
+
+  /* garmin */
+  importGarmin: () => {
+    const block = aiBlocker(); if (block) { toast(block); return; }
+    sheetState = { type: 'garmin', date: state.garminDate, files: [], text: '' };
+    openSheet('Import from Garmin', garminPickHTML());
+  },
+  pickGarmin: async () => {
+    const t = $('#garminText'); if (t && sheetState) sheetState.text = t.value;
+    const files = await pickImages({ multiple: true });
+    if (!files.length || !sheetState) return;
+    sheetState.files = (await withThumbs(files)).slice(0, Math.max(1, IMG_MAX));
+    await ACT.readGarmin();
+  },
+  readGarmin: async () => {
+    const s = sheetState; if (!s) return;
+    const t = $('#garminText'); if (t) s.text = t.value.trim();
+    const hasImage = (s.files || []).length > 0 && photosOK();
+    if (!hasImage && !s.text) { setSheetBody(garminPickHTML(photosOK() ? 'Choose screenshots or paste text first.' : 'Paste the text first.')); return; }
+    try {
+      const r = (await runAI(hasImage ? 'Reading your Garmin screenshots…' : 'Reading your Garmin text…', PROMPTS.garmin(s.date, hasImage ? '' : s.text), hasImage ? { images: s.files } : {})) || {};
+      if (typeof r.date === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(r.date) && r.date <= todayStr()) s.date = r.date;
+      const vals = formVals(s.date);
+      let found = 0;
+      enabledMetrics().forEach(m => {
+        if (m.multi) { const arr = parseMulti(r[m.id]); if (arr.length) { vals[m.id] = arr; found++; } return; }
+        const v = num(r[m.id]); if (v != null) { vals[m.id] = v; found++; }
+      });
+      s.vals = vals; s.found = found;
+      setSheetBody(garminReviewHTML());
+    } catch (e) { showAIError(e, garminPickHTML, 'readGarmin'); }
+  },
+  saveGarminReview: () => {
+    const s = sheetState; if (!s) return;
+    const dEl = $('#gr-date'); const date = dEl && dEl.value && dEl.value <= todayStr() ? dEl.value : s.date;
+    saveMetrics(date, readMetricInputs('gr'));
+    closeSheet(); state.garminDate = date; render();
+    toast('Saved Garmin data for ' + fmtDate(date));
+  },
+  saveGarminForm: () => {
+    saveMetrics(state.garminDate, readMetricInputs('gm'));
+    if (document.activeElement) document.activeElement.blur();
+    render(); toast('Saved Garmin data for ' + fmtDate(state.garminDate));
+  },
+
+  /* settings */
+  openSettings: () => {
+    const st = state.settings, key = getKey();
+    openSheet('Settings', `<h3>Claude API key</h3>
+      <p class="note">Photos, menus, labels and Garmin screenshots are read by Claude through your own API key. Create one in the Claude Console (console.anthropic.com) under API keys, add some credit, and set a monthly spend limit there. The key is stored only on this phone.</p>
+      <label class="field"><span>API key</span><input id="s-key" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="sk-ant-…" value="${esc(key)}"></label>
+      <label class="field"><span>Model</span><select id="s-model">${MODELS.map(m => `<option value="${m[0]}" ${st.model === m[0] ? 'selected' : ''}>${esc(m[1])}</option>`).join('')}</select></label>
+      <div class="row2"><button class="btn" data-act="saveKey">Save</button><button class="btn btn-quiet" data-act="testKey">Test</button></div>
+      <p class="small muted" id="keyStatus" style="margin-top:8px">${key ? 'A key is saved on this phone.' : 'No key saved yet.'}</p>
+      <h3 class="section-title">Goals</h3>
+      <label class="field"><span>Daily goal, compared with your Garmin burn (kcal)</span><input id="s-target" type="number" inputmode="numeric" step="50" value="${esc(st.targetDelta)}"></label>
+      <p class="note">Negative means eating less than you burn. −500 a day is roughly 0.45 kg per week.</p>
+      <label class="field"><span>Protein target (g per kg body weight)</span><input id="s-prot" type="number" inputmode="decimal" step="0.1" value="${esc(st.proteinPerKg)}"></label>
+      <button class="btn btn-wide" data-act="saveSettings">Save goals</button>
+      <h3 class="section-title">Your data</h3>
+      <p class="muted">Saved on this phone only. Export a backup now and then. Import also accepts the export from the Bord version inside Claude.</p>
+      <div class="row2"><button class="btn btn-line" data-act="exportData">Export</button><button class="btn btn-line" data-act="importData">Import</button></div>`);
+  },
+  saveKey: () => {
+    const k = ($('#s-key').value || '').trim(), m = $('#s-model').value;
+    try { if (k) localStorage.setItem(KEY_LS, k); else localStorage.removeItem(KEY_LS); } catch (e) { /* ignore */ }
+    state.settings.model = m; saveCache();
+    const st = $('#keyStatus'); if (st) st.textContent = k ? 'Saved.' : 'Key removed.';
+    render();
+  },
+  testKey: async () => {
+    ACT.saveKey();
+    const st = $('#keyStatus'); if (!st) return;
+    if (!getKey()) { st.textContent = 'Enter a key first.'; return; }
+    st.textContent = 'Testing…';
+    try { const r = await claudeJSON('Reply with {"ok": true}.', { maxTokens: 50 }); st.textContent = r && r.ok ? 'It works. Claude answered.' : 'Claude answered, so the key works.'; }
+    catch (e) { st.textContent = aiErrorText(e) + (e && e.message ? ' (' + e.message + ')' : ''); }
+  },
+  saveSettings: () => {
+    const t = num($('#s-target').value), p = num($('#s-prot').value);
+    if (t != null) state.settings.targetDelta = Math.round(t);
+    if (p != null && p > 0) state.settings.proteinPerKg = round(p, 1);
+    Store.saveSettings(); closeSheet(); toast('Settings saved');
+  },
+  exportData: () => {
+    const data = JSON.stringify({ exported: new Date().toISOString(), settings: state.settings, days: state.days, products: state.products }, null, 2);
+    const url = URL.createObjectURL(new Blob([data], { type: 'application/json' }));
+    const a = document.createElement('a'); a.href = url; a.download = 'bord-export-' + todayStr() + '.json';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 5000);
+    toast('Export saved to your downloads');
+  },
+  importData: async () => {
+    const files = await pickFiles('.json,application/json');
+    if (!files.length) return;
+    let j;
+    try { j = JSON.parse(await files[0].text()); } catch (e) { toast('That file isn’t a Bord export.'); return; }
+    if (!j || typeof j.days !== 'object') { toast('That file isn’t a Bord export.'); return; }
+    let newDays = 0, newEntries = 0;
+    Object.entries(j.days || {}).forEach(([date, day]) => {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !day) return;
+      if (!state.days[date]) newDays++;
+      const d = ensureDay(date);
+      const ids = new Set(d.entries.map(e => e.id));
+      (day.entries || []).forEach(e => { if (e && !ids.has(e.id)) { d.entries.push(e); newEntries++; } });
+      Object.entries(day.metrics || {}).forEach(([k, v]) => { if (d.metrics[k] == null && v != null) d.metrics[k] = v; });
+      Object.entries(day.readings || {}).forEach(([k, v]) => { d.readings = d.readings || {}; if (!d.readings[k] && Array.isArray(v)) d.readings[k] = v; });
+    });
+    Object.entries(j.products || {}).forEach(([id, p]) => { if (!state.products[id] && p) state.products[id] = p; });
+    saveCache(); closeSheet(); render();
+    toast('Imported ' + newEntries + ' food entries' + (newDays ? ' across ' + newDays + ' new days' : ''));
+  }
+};
+function garminReviewHTML() {
+  const s = sheetState;
+  return `<p class="lead">${s.found ? 'Claude found ' + s.found + ' value' + (s.found === 1 ? '' : 's') + '. Check them against Garmin, then save.' : 'Claude couldn’t find Garmin values in these screenshots. You can type them below.'}</p>
+    ${thumbsHTML(s.files)}
+    <label class="field"><span>Day</span><input id="gr-date" type="date" value="${s.date}" max="${todayStr()}"></label>
+    ${metricInputs('gr', s.vals || {})}
+    <p class="note">Empty fields are cleared for this day.</p>
+    <button class="btn btn-wide" data-act="saveGarminReview">Save</button>`;
+}
+
+const IN = {
+  estRange: (el) => { const i = +el.dataset.arg; sheetState.items[i].chosen = +el.value; updateItem(i); },
+  estName: (el) => { sheetState.items[+el.dataset.arg].name = el.value; },
+  searchQ: (el) => { sheetState.q = el.value; $('#searchResults').innerHTML = searchResultsHTML(el.value); },
+  amount: (el) => { sheetState.amount = el.value; $('#pCalc').innerHTML = portionCalcHTML(); }
+};
+const CH = {
+  estOn: (el) => { const i = +el.dataset.arg; sheetState.items[i].on = el.checked; updateItem(i); },
+  unit: (el) => {
+    const s = sheetState, g = portionGrams();
+    s.unit = el.value;
+    if (s.unit === 'g') s.amount = String(round(g, 1));
+    else s.amount = '1';
+    const a = $('#pAmount'); if (a) a.value = s.amount;
+    $('#pCalc').innerHTML = portionCalcHTML();
+  },
+  trendFrom: (el) => { if (el.value) { trendSettings().from = el.value; el.blur(); saveCache(); render(); } },
+  trendTo: (el) => { if (el.value) { trendSettings().to = el.value; el.blur(); saveCache(); render(); } },
+  gDate: (el) => { if (el.value) { state.garminDate = el.value > todayStr() ? todayStr() : el.value; el.blur(); render(); } },
+  module: (el) => { state.settings.modules[el.dataset.arg] = el.checked; el.blur(); Store.saveSettings(); }
+};
+
+document.addEventListener('click', e => {
+  const el = e.target.closest('[data-act]');
+  if (!el || el.disabled) return;
+  const fn = ACT[el.dataset.act];
+  if (fn) { e.preventDefault(); fn(el.dataset.arg, el); }
+});
+document.addEventListener('input', e => { const k = e.target.dataset && e.target.dataset.in; if (k && IN[k] && sheetOrView(e.target)) IN[k](e.target); });
+document.addEventListener('change', e => { const k = e.target.dataset && e.target.dataset.ch; if (k && CH[k]) CH[k](e.target); });
+document.addEventListener('focusout', () => { setTimeout(() => { if (pendingRender) render(); }, 0); });
+function sheetOrView(el) { return !!(el.closest('#sheet') || el.closest('#view')); }
+
+/* ---------- start ---------- */
+loadCache();
+render();
+</script>
+</body>
+</html>
